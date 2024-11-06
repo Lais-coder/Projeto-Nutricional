@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendário de 30 Dias</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .calendar-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .calendar {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .calendar th, .calendar td {
+            width: 14%;
+            text-align: center;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+        .calendar th {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .calendar td {
+            background-color: #f9f9f9;
+        }
+
+        .calendar td.active {
+            background-color: #007bff;
+            color: white;
+            font-weight: bold;
+        }
+
+        .calendar td:hover {
+            background-color: #e0f7fa;
+            cursor: pointer;
+        }
+
+        .calendar-footer {
+            margin-top: 20px;
+            text-align: center;
+            color: #666;
+        }
+
+        .prev-btn, .next-btn {
+            font-size: 16px;
+            cursor: pointer;
+            padding: 8px 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .prev-btn:hover, .next-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="calendar-container">
+        <h1>Calendário de 30 Dias</h1>
+
+        <table class="calendar">
+            <thead>
+                <tr>
+                    <th>Dom</th>
+                    <th>Seg</th>
+                    <th>Ter</th>
+                    <th>Qua</th>
+                    <th>Qui</th>
+                    <th>Sex</th>
+                    <th>Sáb</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Linha 1 -->
+                <tr>
+                    <td class="active">1</td>
+                    <td class="active">2</td>
+                    <td class="active">3</td>
+                    <td class="active">4</td>
+                    <td class="active">5</td>
+                    <td class="active">6</td>
+                    <td class="active">7</td>
+                </tr>
+                <!-- Linha 2 -->
+                <tr>
+                    <td class="active">8</td>
+                    <td class="active">9</td>
+                    <td class="active">10</td>
+                    <td class="active">11</td>
+                    <td class="active">12</td>
+                    <td class="active">13</td>
+                    <td class="active">14</td>
+                </tr>
+                <!-- Linha 3 -->
+                <tr>
+                    <td class="active">15</td>
+                    <td class="active">16</td>
+                    <td class="active">17</td>
+                    <td class="active">18</td>
+                    <td class="active">19</td>
+                    <td class="active">20</td>
+                    <td class="active">21</td>
+                </tr>
+                <!-- Linha 4 -->
+                <tr>
+                    <td class="active">22</td>
+                    <td class="active">23</td>
+                    <td class="active">24</td>
