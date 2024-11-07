@@ -9,12 +9,36 @@
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
             margin: 0;
-            padding: 20px;
+            
+        }
+        header {
+            width: 100%;
+            background-color: #007bff;
+            padding: 8px;
+            text-align: left;
         }
 
+        header nav {
+            display: inline-block;
+            margin: 0 5px;
+        }
+
+        header nav a {
+            color: aliceblue;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+    header nav a:hover {
+        background-color: #0056b3;
+    }
+
         .calendar-container {
-            max-width: 600px;
             margin: 0 auto;
+            width: 100%;
             background-color: #fff;
             padding: 20px;
             border-radius: 10px;
@@ -80,9 +104,20 @@
     </style>
 </head>
 <body>
+    <header>
+        <nav>
+            <a href="perfil.html">Home</a>
+        </nav>
+        <nav>
+            <a href="planoalimentar.html">Plano Alimentar</a>
+        </nav>
+        <nav>
+            <a href="calendario.html">Calendário</a>
+        </nav>
+    </header>
 
     <div class="calendar-container">
-        <h1>Calendário de 30 Dias</h1>
+        <h1>Novembro</h1>
 
         <table class="calendar">
             <thead>
@@ -132,3 +167,13 @@
                     <td class="active">22</td>
                     <td class="active">23</td>
                     <td class="active">24</td>
+                    <td class="active">25</td>
+                    <td class="active">26</td>
+                    <td class="active">27</td>
+                    <td class="active">28</td>
+                 </tr>
+                 <!--Linha 5-->
+                 <tr>
+                    <td class="active">29</td>
+                    <td class="active">30</td>
+                 </tr>  
