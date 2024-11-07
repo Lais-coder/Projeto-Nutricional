@@ -1,175 +1,169 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plano Alimentar Interativo</title>
-    <link rel="stylesheet" href="styles.css">
 </head>
 <style>
+    /* Estilos gerais */
     body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
-}
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9;
+        color: #333;
+        margin: 0;
+        padding: 0;
+    }
 
-header {
-    background-color: #4CAF50;
-    color: white;
-    padding: 20px 0;
-    text-align: center;
-}
+    header {
+        background-color: #4CAF50;
+        color: white;
+        padding: 20px 0;
+        text-align: center;
+    }
 
-.header-container h1 {
-    font-size: 2rem;
-}
+    header nav a {
+        color: aliceblue;
+        text-decoration: none;
+        font-size: 18px;
+        padding: 10px;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
 
+    header nav a:hover {
+        background-color: #183819;
+    }
 
-main {
-    padding: 20px;
-    width: 100%;
-    height: 100%;
-}
+    .container {
+        padding: 20px;
+    }
 
-.week-plan {
-    display: grid;
-}
+    .meal-section {
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+        padding: 15px;
+        margin-bottom: 15px;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 
-.day-card {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-}
+    .meal-section h3 {
+        font-size: 1.5rem;
+        color: #4CAF50;
+        margin: 0;
+        display: flex;
+        align-items: center;
+    }
 
-.day-card h2 {
-    text-align: center;
-    color: #333;
-    margin-bottom: 20px;
-}
+    .meal-section img {
+        width: 30px;
+        height: 30px;
+        margin-left: 10px;
+    }
 
-.meals {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
+    .meal-details {
+        display: none;
+        margin-top: 10px;
+        padding: 10px;
+        border-top: 1px solid #ddd;
+    }
 
-.meal-card {
-    background-color: #f9f9f9;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-}
+    .done-btn {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1rem;
+        margin-top: 10px;
+    }
 
-.meal-card h3 {
-    font-size: 1.2rem;
-    color: #4CAF50;
-    margin-bottom: 10px;
-}
-
-.meal-card p {
-    margin-bottom: 10px;
-}
-
-.done-btn {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-}
-
-.done-btn:hover {
-    background-color: #45a049;
-}
-
-footer {
-    background-color: #333;
-    color: white;
-    padding: 10px;
-    text-align: center;
-    font-size: 0.8rem;
-}
+    .done-btn:hover {
+        background-color: #45a049;
+    }
 </style>
 <body>
-        <header>
-        <div class="header-container">
-            <h1>Plano Alimentar Semanal</h1>
-        </div>
+    <header>
+        <h1>Plano Alimentar Interativo</h1>
         <nav>
             <a href="perfil.html">Home</a>
-        </nav>
-        <nav>
             <a href="planoalimentar.html">Plano Alimentar</a>
-        </nav>
-        <nav>
             <a href="calendario.html">Calendário</a>
         </nav>
-        
     </header>
 
-    <main>
-        <section class="week-plan">
-            <!-- Segunda-feira -->
-            <div class="day-card">
-                <h2>Terça-feira</h2>
-                <div class="meals">
-                    <div class="meal-card">
-                        <h3>Café da Manhã</h3>
-                        
-                        <p>Leite de vaca desnatado UHT - 1 copo americano duplo (400ml)</p>
-                        <p>Banana -  1 Unidade(s) média(s) (40g) </p>
-                        <p>Maçã -  1 Unidade(s) média(s) (130g)</p>
-                        <p>Morango - 10 Unidade(s) média(s) (120g)</p>
-                        <p>Semente de linhaça - 3 Colher(es) de sopa cheia(s) (45g) </p>
-                        <p> Whey protein concentrado -  1 Medidor(es) (30g)</p>
-                        
-                        <p>Calorias: 250 | Proteínas: 20g | Carboidratos: 5g | Gorduras: 15g</p>
-
-                        <button class="done-btn">Marcar como Feito</button>
-                    </div>
-                    <div class="meal-card">
-                        <h3>Almoço</h3>
-                        <p>Sobrecoxa de frango assada( 2 unidades - 100g) 
-                        <p>Arroz branco ( 4 colheres - 180g)
-                        <p>Feijão preto ( 1 concha - 140g) e Brócolis cozido( 2 colheres - 54g)</p>
-                        <p>Tangerina Ponkã ( 1 unidade - 54g)</p>
-                        <p>Calorias: 500 | Proteínas: 35g | Carboidratos: 45g | Gorduras: 15g</p>
-                        <button class="done-btn">Marcar como Feito</button>
-                    </div>
-                    <div class="meal-card">
-                        <h3>Lanche</h3>
-                        <p>Torrada integral - 3 unidades (30g)</p>
-                        <p>Creme de ricota light - 2 colheres de sopa (40g)</p>
-                        <p>Calorias: 400 | Proteínas: 30g | Carboidratos: 10g | Gorduras: 25g</p>
-                        <button class="done-btn">Marcar como Feito</button>
-                    </div>
-                    <div class="meal-card">
-                        <h3>Jantar</h3>
-                        <p>Atum grelhado/assado( 1 filé - 100g)</p>
-                        <p>Alface( 2 folhas - 20g)</p>
-                        <p>Rúcula( 1 pegador - 8g)</p>
-                        <p>Tomate cereja( 5 unidades - 50g)</p>
-                        <p>Inhame cozido( 3 colheres - 186g)</p>
-                        <p>Beterraba cozida( 1 colher de arroz - 38g)</p>
-                        <p>Grão de Bico cozido( 2 colheres - 110g)</p>
-                        <p>Calorias: 400 | Proteínas: 30g | Carboidratos: 10g | Gorduras: 25g</p>
-                        <button class="done-btn">Marcar como Feito</button>
-                    </div>
-                </div>
+    <div class="container">
+        <!-- Seção para Café da Manhã -->
+        <div class="meal-section" onclick="toggleDetails('breakfast')">
+            <h3>Café da Manhã <img src="icone-cafe.png" alt="Ícone Café da Manhã"></h3>
+            <div class="meal-details" id="breakfast">
+                <p>Leite de vaca desnatado UHT - 1 copo americano duplo (400ml)</p>
+                <p>Banana - 1 unidade média (40g)</p>
+                <p>Maçã - 1 unidade média (130g)</p>
+                <p>Morango - 10 unidades médias (120g)</p>
+                <p>Semente de linhaça - 3 colheres de sopa cheias (45g)</p>
+                <p>Whey protein concentrado - 1 medidor (30g)</p>
+                <p>Calorias: 250 | Proteínas: 20g | Carboidratos: 5g | Gorduras: 15g</p>
+                <button class="done-btn">Marcar como Feito</button>
             </div>
+        </div>
 
-            <!-- Mais dias podem ser adicionados aqui -->
+        <!-- Seção para Almoço -->
+        <div class="meal-section" onclick="toggleDetails('lunch')">
+            <h3>Almoço <img src="icone-almoco.png" alt="Ícone Almoço"></h3>
+            <div class="meal-details" id="lunch">
+                <p>Sobrecoxa de frango assada - 2 unidades (100g)</p>
+                <p>Arroz branco - 4 colheres (180g)</p>
+                <p>Feijão preto - 1 concha (140g)</p>
+                <p>Brócolis cozido - 2 colheres (54g)</p>
+                <p>Tangerina Ponkã - 1 unidade (54g)</p>
+                <p>Calorias: 500 | Proteínas: 35g | Carboidratos: 45g | Gorduras: 15g</p>
+                <button class="done-btn">Marcar como Feito</button>
+            </div>
+        </div>
 
-        </section>
-    </main>
+        <!-- Seção para Lanche -->
+        <div class="meal-section" onclick="toggleDetails('snack')">
+            <h3>Lanche <img src="icone-lanche.png" alt="Ícone Lanche"></h3>
+            <div class="meal-details" id="snack">
+                <p>Torrada integral - 3 unidades (30g)</p>
+                <p>Creme de ricota light - 2 colheres de sopa (40g)</p>
+                <p>Calorias: 400 | Proteínas: 30g | Carboidratos: 10g | Gorduras: 25g</p>
+                <button class="done-btn">Marcar como Feito</button>
+            </div>
+        </div>
 
-    <footer>
-        <p>&copy; 2024 Plano Alimentar Interativo</p>
-    </footer>
+        <!-- Seção para Jantar -->
+        <div class="meal-section" onclick="toggleDetails('dinner')">
+            <h3>Jantar <img src="icone-jantar.png" alt="Ícone Jantar"></h3>
+            <div class="meal-details" id="dinner">
+                <p>Atum grelhado/assado - 1 filé (100g)</p>
+                <p>Alface - 2 folhas (20g)</p>
+                <p>Rúcula - 1 pegador (8g)</p>
+                <p>Tomate cereja - 5 unidades (50g)</p>
+                <p>Inhame cozido - 3 colheres (186g)</p>
+                <p>Beterraba cozida - 1 colher de arroz (38g)</p>
+                <p>Grão de Bico cozido - 2 colheres (110g)</p>
+                <p>Calorias: 400 | Proteínas: 30g | Carboidratos: 10g | Gorduras: 25g</p>
+                <button class="done-btn">Marcar como Feito</button>
+            </div>
+        </div>
+    </div>
 
+    <script>
+        function toggleDetails(mealId) {
+            var details = document.getElementById(mealId);
+            if (details.style.display === "none" || details.style.display === "") {
+                details.style.display = "block";
+            } else {
+                details.style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>

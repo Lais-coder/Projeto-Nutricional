@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calendário de 30 Dias</title>
+    <title>Calendário de Novembro e Dezembro</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
             margin: 0;
-            
         }
         header {
             width: 100%;
@@ -17,12 +16,10 @@
             padding: 8px;
             text-align: left;
         }
-
         header nav {
             display: inline-block;
             margin: 0 5px;
         }
-
         header nav a {
             color: aliceblue;
             text-decoration: none;
@@ -31,11 +28,9 @@
             border-radius: 5px;
             transition: background-color 0.3s;
         }
-
-    header nav a:hover {
-        background-color: #0056b3;
-    }
-
+        header nav a:hover {
+            background-color: #0056b3;
+        }
         .calendar-container {
             margin: 0 auto;
             width: 100%;
@@ -44,62 +39,42 @@
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
-
         h1 {
             text-align: center;
             color: #333;
         }
-
         .calendar {
             width: 100%;
             border-collapse: collapse;
+            margin-bottom: 20px;
         }
-
         .calendar th, .calendar td {
             width: 14%;
             text-align: center;
             padding: 10px;
             border: 1px solid #ddd;
         }
-
         .calendar th {
             background-color: #007bff;
             color: white;
         }
-
         .calendar td {
             background-color: #f9f9f9;
-        }
-
-        .calendar td.active {
-            background-color: #007bff;
-            color: white;
-            font-weight: bold;
-        }
-
-        .calendar td:hover {
-            background-color: #e0f7fa;
             cursor: pointer;
         }
-
+        .calendar td:hover {
+            background-color: #e0f7fa;
+        }
         .calendar-footer {
             margin-top: 20px;
             text-align: center;
             color: #666;
         }
-
-        .prev-btn, .next-btn {
-            font-size: 16px;
-            cursor: pointer;
-            padding: 8px 16px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-        }
-
-        .prev-btn:hover, .next-btn:hover {
-            background-color: #0056b3;
+        #message-box {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 18px;
+            color: #333;
         }
     </style>
 </head>
@@ -118,7 +93,6 @@
 
     <div class="calendar-container">
         <h1>Novembro</h1>
-
         <table class="calendar">
             <thead>
                 <tr>
@@ -132,48 +106,143 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- Linha 1 -->
                 <tr>
-                    <td class="active">1</td>
-                    <td class="active">2</td>
-                    <td class="active">3</td>
-                    <td class="active">4</td>
-                    <td class="active">5</td>
-                    <td class="active">6</td>
-                    <td class="active">7</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td onclick="showMessage(1)">1</td>
+                    <td onclick="showMessage(2)">2</td>
                 </tr>
-                <!-- Linha 2 -->
                 <tr>
-                    <td class="active">8</td>
-                    <td class="active">9</td>
-                    <td class="active">10</td>
-                    <td class="active">11</td>
-                    <td class="active">12</td>
-                    <td class="active">13</td>
-                    <td class="active">14</td>
+                    <td onclick="showMessage(3)">3</td>
+                    <td onclick="showMessage(4)">4</td>
+                    <td onclick="showMessage(5)">5</td>
+                    <td onclick="showMessage(6)">6</td>
+                    <td onclick="showMessage(7)">7</td>
+                    <td onclick="showMessage(8)">8</td>
+                    <td onclick="showMessage(9)">9</td>
                 </tr>
-                <!-- Linha 3 -->
                 <tr>
-                    <td class="active">15</td>
-                    <td class="active">16</td>
-                    <td class="active">17</td>
-                    <td class="active">18</td>
-                    <td class="active">19</td>
-                    <td class="active">20</td>
-                    <td class="active">21</td>
+                    <td onclick="showMessage(10)">10</td>
+                    <td onclick="showMessage(11)">11</td>
+                    <td onclick="showMessage(12)">12</td>
+                    <td onclick="showMessage(13)">13</td>
+                    <td onclick="showMessage(14)">14</td>
+                    <td onclick="showMessage(15)">15</td>
+                    <td onclick="showMessage(16)">16</td>
                 </tr>
-                <!-- Linha 4 -->
                 <tr>
-                    <td class="active">22</td>
-                    <td class="active">23</td>
-                    <td class="active">24</td>
-                    <td class="active">25</td>
-                    <td class="active">26</td>
-                    <td class="active">27</td>
-                    <td class="active">28</td>
-                 </tr>
-                 <!--Linha 5-->
-                 <tr>
-                    <td class="active">29</td>
-                    <td class="active">30</td>
-                 </tr>  
+                    <td onclick="showMessage(17)">17</td>
+                    <td onclick="showMessage(18)">18</td>
+                    <td onclick="showMessage(19)">19</td>
+                    <td onclick="showMessage(20)">20</td>
+                    <td onclick="showMessage(21)">21</td>
+                    <td onclick="showMessage(22)">22</td>
+                    <td onclick="showMessage(23)">23</td>
+                </tr>
+                <tr>
+                    <td onclick="showMessage(24)">24</td>
+                    <td onclick="showMessage(25)">25</td>
+                    <td onclick="showMessage(26)">26</td>
+                    <td onclick="showMessage(27)">27</td>
+                    <td onclick="showMessage(28)">28</td>
+                    <td onclick="showMessage(29)">29</td>
+                    <td onclick="showMessage(30)">30</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h1>Dezembro</h1>
+        <table class="calendar">
+            <thead>
+                <tr>
+                    <th>Dom</th>
+                    <th>Seg</th>
+                    <th>Ter</th>
+                    <th>Qua</th>
+                    <th>Qui</th>
+                    <th>Sex</th>
+                    <th>Sáb</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td onclick="showMessage(1, 'dezembro')">1</td>
+                    <td onclick="showMessage(2, 'dezembro')">2</td>
+                    <td onclick="showMessage(3, 'dezembro')">3</td>
+                    <td onclick="showMessage(4, 'dezembro')">4</td>
+                    <td onclick="showMessage(5, 'dezembro')">5</td>
+                    <td onclick="showMessage(6, 'dezembro')">6</td>
+                    <td onclick="showMessage(7, 'dezembro')">7</td>
+                </tr>
+                <tr>
+                    <td onclick="showMessage(8, 'dezembro')">8</td>
+                    <td onclick="showMessage(9, 'dezembro')">9</td>
+                    <td onclick="showMessage(10, 'dezembro')">10</td>
+                    <td onclick="showMessage(11, 'dezembro')">11</td>
+                    <td onclick="showMessage(12, 'dezembro')">12</td>
+                    <td onclick="showMessage(13, 'dezembro')">13</td>
+                    <td onclick="showMessage(14, 'dezembro')">14</td>
+                </tr>
+                <tr>
+                    <td onclick="showMessage(15, 'dezembro')">15</td>
+                    <td onclick="showMessage(16, 'dezembro')">16</td>
+                    <td onclick="showMessage(17, 'dezembro')">17</td>
+                    <td onclick="showMessage(18, 'dezembro')">18</td>
+                    <td onclick="showMessage(19, 'dezembro')">19</td>
+                    <td onclick="showMessage(20, 'dezembro')">20</td>
+                    <td onclick="showMessage(21, 'dezembro')">21</td>
+                </tr>
+                <tr>
+                    <td onclick="showMessage(22, 'dezembro')">22</td>
+                    <td onclick="showMessage(23, 'dezembro')">23</td>
+                    <td onclick="showMessage(24, 'dezembro')">24</td>
+                    <td onclick="showMessage(25, 'dezembro')">25</td>
+                    <td onclick="showMessage(26, 'dezembro')">26</td>
+                    <td onclick="showMessage(27, 'dezembro')">27</td>
+                    <td onclick="showMessage(28, 'dezembro')">28</td>
+                </tr>
+                <tr>
+                    <td onclick="showMessage(29, 'dezembro')">29</td>
+                    <td onclick="showMessage(30, 'dezembro')">30</td>
+                    <td onclick="showMessage(31, 'dezembro')">31</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div id="message-box">Clique em um dia para ver a mensagem</div>
+    </div>
+
+    <script>
+        function showMessage(day, month = 'novembro') {
+            const messages = {
+                novembro: {
+                    1: "Mensagem para 1 de novembro",
+                    2: "Mensagem para 2 de novembro",
+                    3: "Mensagem para 3 de novembro",
+                    4: "Mensagem para 4 de novembro",
+                    5: "Mensagem para 5 de novembro",
+                    // ... Adicione outras mensagens para novembro conforme necessário
+                },
+                dezembro: {
+                    1: "Mensagem para 1 de dezembro",
+                    2: "Mensagem para 2 de dezembro",
+                    3: "Mensagem para 3 de dezembro",
+                    4: "Mensagem para 4 de dezembro",
+                    5: "Mensagem para 5 de dezembro",
+                    // ... Adicione outras mensagens para dezembro conforme necessário
+                }
+            };
+
+            const message = messages[month][day] || "Nenhuma mensagem para esta data";
+            document.getElementById("message-box").innerText = message;
+        }
+    </script>
+</body>
+</html>
