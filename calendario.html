@@ -8,13 +8,62 @@
          body { 
                 font-family: Arial, sans-serif;  background-color: #f4f4f4; margin: 0; padding: 0; }
          
-         .navbar { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 1rem; background-color: rgba(255, 255, 255, 0.8); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); position: relative; z-index: 1; } .alinhar{ display: flex; align-items: center; } .navbar a { margin: 0 0.5rem; text-decoration: none; color: #333; font-weight: 500; transition: color 0.3s; } .navbar a:hover { color: #00796b; } .calendar-container { margin: 0 auto; width: 90%; max-width: 800px; background-color: #fff; padding: 10px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); } h1 { text-align: center; color: #333; font-size: 1.5rem; } .calendar { width: 100%; border-collapse: collapse; margin-bottom: 10px; } .calendar th, .calendar td { width: 14.2%; text-align: center; padding: 5px; border: 1px solid #ddd; } .calendar th { background-color: #007bff; color: white; } .calendar td { background-color: #f9f9f9; cursor: pointer; } .calendar td:hover { background-color: #e0f7fa; } #message-box { margin-top: 10px; text-align: center; font-size: 16px; color: #333; }
+         .navbar { width: 100%; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 0.5rem 1rem; 
+            background-color: rgba(255, 255, 255, 0.8); 
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+             position: relative; z-index: 1; } 
+             
+             .alinhar{ 
+                display: flex;
+                align-items: center; } 
+            .navbar a { margin: 0 0.5rem; 
+                text-decoration: none; 
+                color: #333; font-weight: 500;
+                transition: color 0.3s; } 
+            .navbar a:hover { color: #00796b; } 
+            .calendar-container {
+                margin: 0 auto;
+                width: 90%; 
+                max-width: 800px; 
+                background-color: #fff; 
+                padding: 10px;
+                border-radius: 10px; 
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); }
+                          
+             h1 { text-align: center; 
+                color: #333; 
+                font-size: 1.5rem; } 
+                            
+             .calendar { 
+                width: 100%;
+                border-collapse: collapse;
+                margin-bottom: 10px; } 
+                                  
+            .calendar th, 
+                                  
+            .calendar td { width: 14.2%; 
+                text-align: center;
+                padding: 5px;
+                border: 1px solid #ddd; } 
+            .calendar th { background-color: #4CAF50; 
+                color: white; } 
+            .calendar td { background-color: #f9f9f9; cursor: pointer; } 
+            .calendar td:hover {
+                background-color: #e0f7fa; } 
+            #message-box { margin-top: 10px;
+                text-align: center; 
+                font-size: 16px;
+                color: #333; }
     </style>
 </head>
 <body>
     <div class="navbar">
         <div class="alinhar">
-            <img src="imagens/logo.png" alt="Logo" style="height: 40px;  border-radius: 25px; margin-right: 1rem;">
+            <a href="inicial.html"><img src="imagens/logo.png" alt="Logo" style="height: 40px;  border-radius: 25px; margin-right: 1rem;"></a>
             <a href="perfil.html">Meu Perfil</a>
             <a href="calendario.html">Calendario</a>
             <a href="planoalimentar.html">Plano Alimentar</a>
