@@ -78,7 +78,7 @@ h1 {
 p{
     text-align: center;
 }
-form > input[type="submit"]{
+form > a > input[type="submit"]{
     display: block;
     font-size: 1em;
     width: 100%;
@@ -130,7 +130,7 @@ form > a.botao:hover{
           <div id="formulario">
             <h1>Portal de Login</h1>
             <p>Seja bem-vindo(a) novamente. <br>Faça login para acessar sua conta!</p>
-            <form action="login.php" method="post" autocomplete="on">
+            <form action="perfil.html" method="post" autocomplete="on">
               <div class="campo">
                 <span class="material-symbols-outlined">group_add</span>
                 <input type="email" name="login" id="ilogin" placeholder="Seu Email" autocomplete="email" required>
@@ -141,7 +141,7 @@ form > a.botao:hover{
                 <input type="password" name="senha" id="isenha" placeholder="Sua Senha"                         autocomplete="current-password" required>
                     <label for="isenha">Senha</label>
               </div>
-                <input type="submit" value="Entrar">
+                <a href="perfil.html"><input type="submit" value="Entrar"></a>
                 <a href="Esqueci.html" class="botao">Esqueci a Senha</a>
             </form>
           </div>

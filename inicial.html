@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebDiet</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0 !important;
+            font-family: 'Circular', sans-serif;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            text-align: left;
+            background: url(foto.jpg) no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .navbar {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1;
+        }
+
+        .navbar a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #00796b;
+        }
+
+        .button:hover {
+            background-color: #005f56;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 2rem;
+            border-radius: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .container h1 {
+            font-size: 2.5rem;
+            color: #333;
+            line-height: 1.3;
+        }
+
+        .highlight {
+            color:#7668A6 ;
+        }
+
+        .container p {
+            color: #555;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-top: 1rem;
+        }
+
+        .entrar {
+            background-color: #7668A6;
+            color: #fff;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-top: 2rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .criar {
+            background-color: #7c7c7c3d;
+            color: #000000;
+            border-radius: 10px;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-top: 2rem;
+            cursor: pointer;
+            transition: background-color 0.3s;        }
+        .entrar:hover {
+            background-color: #7f55ff63;
+        }
+        .criar:hover {
+            background-color: #4d4d4d79;
+            color: white;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 3rem;
+        }
+
+        .image-container img {
+            width: 90%;
+            max-width: 600px;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <div>
+            <img src="logo.png" alt="Logo" style="height: 60px;  border-radius: 25px; margin-right: 1rem;">
+            <a href="#">Funcionalidades</a>
+            <a href="#">Preços</a>
+            <a href="#">Perguntas frequentes</a>
+            <a href="#">Contato</a>
+        </div>
+
+    </div>
+
+    <div class="container">
+        <p>Com o MYF'SP você...</p>
+        <h1><span class="highlight">Alimenta</span> </h1>
+        <h1>seus objetivos</h1>
+        <p>Seu plano, sua nutrição, sua melhor saúde.</p>
+        <button class="criar">Criar conta</button>
+        <a href="login.html"><button class="entrar">Já tenho uma conta</button></a>
+    </div>
+</body>
+</html>
