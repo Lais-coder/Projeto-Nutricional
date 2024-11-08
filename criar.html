@@ -9,7 +9,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
@@ -17,83 +17,120 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background-color: #f5f5f5;
+            background-color: #f7f7f7;
+            color: #333;
+            font-size: 16px;
         }
 
         .container {
-            width: 90%;
+            width: 100%;
             max-width: 600px;
             background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
             overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .container:hover {
+            transform: translateY(-5px);
         }
 
         header {
             display: flex;
             align-items: center;
-            padding: 10px;
-            background-color: #f5f5f5;
+            padding: 12px 20px;
+            background-color: #f0f0f0;
+            border-bottom: 1px solid #ddd;
         }
 
         .back-btn {
             background: none;
             border: none;
             font-size: 24px;
+            color: #333;
             cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .back-btn:hover {
+            color: #4caf50;
         }
 
         .progress-bar {
             flex: 1;
             height: 5px;
             background-color: #4caf50;
-            margin-left: 10px;
-            border-radius: 5px;
+            margin-left: 15px;
+            border-radius: 10px;
+            transition: width 0.5s ease;
         }
 
         .content {
+            padding: 30px;
             text-align: center;
-            padding: 20px;
         }
 
         .duo-icon {
-            width: 60px;
-            margin-bottom: 10px;
+            width: 80px;
+            margin-bottom: 15px;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+
+        .duo-icon:hover {
+            transform: scale(1.1);
         }
 
         h2 {
-            font-size: 20px;
+            font-size: 24px;
             margin-bottom: 20px;
+            color: #333;
+            font-weight: 600;
         }
 
         .options {
             display: grid;
-            gap: 10px;
+            gap: 15px;
+            margin-bottom: 20px;
         }
 
         .option {
             display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background-color: #f0f0f0;
-            border: none;
-            border-radius: 5px;
-            padding: 10px;
-            font-size: 16px;
-            cursor: default;
-            text-align: left;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 12px;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+
+        .option:hover {
+            background-color: #eaf5e0;
+            border-color: #4caf50;
         }
 
         .option label {
-            flex: 1;
+            margin-bottom: 6px;
+            font-size: 16px;
+            color: #333;
         }
 
         .option input {
-            flex: 2;
-            padding: 5px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
             font-size: 16px;
+            color: #333;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .option input:focus {
+            border-color: #4caf50;
         }
 
         .continue-btn {
@@ -101,11 +138,33 @@
             background-color: #4caf50;
             color: #fff;
             border: none;
-            padding: 10px;
-            border-radius: 5px;
-            font-size: 16px;
-            margin-top: 20px;
+            padding: 14px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
             cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .continue-btn:hover {
+            background-color: #45a049;
+        }
+
+        .continue-btn:active {
+            background-color: #388e3c;
+        }
+
+        .continue-btn:disabled {
+            background-color: #b2b2b2;
+            cursor: not-allowed;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #f0f0f0;
+            font-size: 14px;
+            color: #666;
         }
     </style>
 </head>
@@ -114,34 +173,40 @@
 <div class="container">
     <header>
         <a href="inicial.html"><button class="back-btn">&larr;</button></a>
-        <div class="progress-bar"></div>
+        <div class="progress-bar" style="width: 70%;"></div>
     </header>
 
     <div class="content">
-        <img src="imagens/logo.png" alt="Ícone do Duolingo" class="duo-icon" style="border-radius: 25px;">
+        <img src="imagens/logo.png" alt="Ícone do Duolingo" class="duo-icon">
         <h2>Criando sua conta</h2>
         
         <div class="options">
             <div class="option">
                 <label for="nome">Nome:</label>
-                <input type="text" id="nome" name="nome">
+                <input type="text" id="nome" name="nome" placeholder="Digite seu nome">
             </div>
             <div class="option">
                 <label for="idade">Idade:</label>
-                <input type="number" id="idade" name="idade">
+                <input type="number" id="idade" name="idade" placeholder="Digite sua idade">
             </div>
             <div class="option">
                 <label for="altura">Altura:</label>
-                <input type="text" id="altura" name="altura">
+                <input type="text" id="altura" name="altura" placeholder="Digite sua altura">
             </div>
             <div class="option">
                 <label for="peso">Peso:</label>
-                <input type="text" id="peso" name="peso">
+                <input type="text" id="peso" name="peso" placeholder="Digite seu peso">
             </div>
         </div>
 
-        <a href="perfil.html"><button class="continue-btn">Continuar</button></a>
+        <a href="perguntas/perguntas.html">
+            <button class="continue-btn">Próximo</button>
+        </a>
     </div>
+
+    <footer>
+        &copy; 2024 Duolingo, Todos os direitos reservados.
+    </footer>
 </div>
 
 </body>
