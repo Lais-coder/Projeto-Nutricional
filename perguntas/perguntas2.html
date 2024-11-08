@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Interativo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f7f7f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            color: #333;
+            position: relative;
+        }
+
+        /* Fundo interativo com frutas e vegetais */
+        .background {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .background img {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            opacity: 0.3;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) translateX(0);
+            }
+            50% {
+                transform: translateY(-20px) translateX(20px);
+            }
+            100% {
+                transform: translateY(0) translateX(0);
+            }
+        }
+
+        .quiz-container {
+            background: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            width: 100%;
+            max-width: 600px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+            z-index: 1;
+        }
+
+        .quiz-container:hover {
+            transform: scale(1.02);
+        }
+
+        h1 {
+            text-align: center;
+            color: #6a1b9a;
+            margin-bottom: 20px;
+        }
+
+        .question {
+            margin-bottom: 25px;
+        }
+
+        .question p {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .options {
+            display: block;
+            align-items: center;
+            padding: 10px;
+            padding-left: 15px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .options label:hover {
+            background: #e0e0e0;
+        }
+
+
+        .submit-button {
+            width: 100%;
+            padding: 15px;
+            background-color: #6a1b9a;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+
+        .submit-button:hover {
+            background-color: #4a148c;
+        }
+
+        .result {
+            font-size: 18px;
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .correct {
+            color: green;
+        }
+
+        .incorrect {
+            color: red;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            font-size: 18px;
+            margin-top: 20px;
+            color: #6a1b9a;
+        }
+
+        .quiz-container.hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="quiz-container" id="quiz-container">
+        <h1>Questionário</h1>
+
+        <form id="quizForm">
+            <div class="question">
+                <p>Você tem algum problema de saúde?</p>
+                <div class="options">
+                    <input type="radio" name="question1" value="A" id="q1a">
+                    <label for="q1a">Sim</label>
+                    <input type="radio" name="question1" value="B" id="q1b">
+                    <label for="q1b">Não</label>
+                </div>
+
+                <a href="perguntas3.html"><button type="button" class="submit-button" onclick="submitQuiz()">Próximo</button></a>
+        </form>
+
+        <div id="result" class="result"></div>
+        <div id="loading" class="loading">Carregando resultado...</div>
+    </div>
+
+    <script>
+        function submitQuiz() {
+            const resultContainer = document.getElementById("result");
+            const loadingContainer = document.getElementById("loading");
+            const quizContainer = document.getElementById("quiz-container");
+
+            loadingContainer.style.display = "block";
+            quizContainer.classList.add("hidden");
+
+            setTimeout(() => {
+                const form = document.getElementById("quizForm");
+                const answers = {
+                    question1: "B",
+                    question2: "B",
+                };
+
+                let score = 0;
+                let totalQuestions = 2;
+
+                for (let i = 1; i <= totalQuestions; i++) {
+                    const selectedAnswer = form.querySelector(input[name="question${i}"]:checked);
+                    if (selectedAnswer && selectedAnswer.value === answers[question${i}])
+                        score++;
+                    }
+                
+
+               { resultContainer.innerHTML = Você acertou ${score} de ${totalQuestions} questões.;
+                resultContainer.classList.add(score === totalQuestions ? 'correct' : 'incorrect');
+                loadingContainer.style.display = "none";
+                quizContainer.classList.remove("hidden");
+               }
+    </script>
+
+</body>
+</html>
