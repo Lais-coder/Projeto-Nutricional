@@ -27,6 +27,7 @@ body {
 /* Estilo do Header com links */
 .navbar {
             width: 100%;
+            display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 1rem 2rem;
@@ -34,6 +35,11 @@ body {
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             position: relative;
             z-index: 1;
+        }
+
+        .alinhar{
+            display: flex;
+            align-items: center;
         }
 
         .navbar a {
@@ -46,10 +52,6 @@ body {
 
         .navbar a:hover {
             color: #00796b;
-        }
-        .iniciar{
-            display: flex;
-            align-items: center;
         }
 
 /* Container do perfil */
@@ -215,14 +217,13 @@ body {
 <body>
     <!-- Header com links de navegação -->
     <div class="navbar">
-        <div class="iniciar">
+        <div class="alinhar">
             <a href="inicial.html"><img src="imagens/logo.png" alt="Logo" style="height: 40px;  border-radius: 25px; margin-right: 1rem;"></a>
             <a href="perfil.html">Meu Perfil</a>
             <a href="calendario.html">Calendario</a>
             <a href="planoalimentar.html">Plano Alimentar</a>
-            <a href="#">Contato</a>
         </div>
-
+    </div>
     <!-- Container principal com perfil -->
     <div class="container">
         <div class="profile-header">

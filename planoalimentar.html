@@ -3,27 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfil Nutricional</title>
-   <style>
-    * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
+    <title>Plano Alimentar Interativo</title>
+</head>
+<style>
+    /* Estilos gerais */
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9;
+        color: #333;
+        margin: 0;
+        padding: 0;
+    }
 
-body {
-    background-color: #f5f5f5;
-    color: #333;
-}
-
-.container {
-    width: 90%;
-    margin: auto;
-    padding-top: 20px;
-}
-
-.navbar {
+    .navbar {
             width: 100%;
             display: flex;
             justify-content: space-between;
@@ -33,6 +25,11 @@ body {
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             position: relative;
             z-index: 1;
+        }
+
+        .alinhar{
+            display: flex;
+            align-items: center;
         }
 
         .navbar a {
@@ -47,141 +44,134 @@ body {
             color: #00796b;
         }
 
-.user-info h2 {
-    margin: 0;
-}
+    .container {
+        padding: 20px;
+    }
 
-.user-info p {
-    margin: 5px 0;
-}
+    .meal-section {
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+        padding: 15px;
+        margin-bottom: 15px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+    }
 
-.user-info span {
-    font-size: 14px;
-}
+    .meal-section h3 {
+        font-size: 1.5rem;
+        color: #4CAF50;
+        margin: 0;
+        display: flex;
+        align-items: center;
+    }
 
-.sections {
-    display: flex;
-    gap: 20px;
-    
-    margin-top: 20px;
-    flex-wrap: wrap;
-}
+    .meal-section img {
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+    }
 
-.card {
-    flex: 1 1 22%;
-    background-color: #fff;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
+    .meal-details {
+        display: none;
+        margin-top: 10px;
+        padding: 10px;
+        border-top: 1px solid #ddd;
+    }
 
-.card h3 {
-    font-size: 1.2em;
-    margin-bottom: 10px;
-    color: #fff;
-    padding: 10px;
-    border-radius: 5px;
-    text-align: center;
-}
+    .done-btn {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1rem;
+        margin-top: 10px;
+    }
 
-.anamneses h3 { background-color: #e57373; }
-.antropometricas h3 { background-color: #81c784; }
-.laboratoriais h3 { background-color: #f06292; }
-.alimentares h3 { background-color: #64b5f6; }
-
-ul {
-    list-style: none;
-}
-
-ul li {
-    margin: 10px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.add-btn {
-    background-color: #4caf50;
-    color: #fff;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 100%;
-    margin-top: 10px;
-}
-
-button {
-    padding: 5px 10px;
-    border: none;
-    background-color: #ddd;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-   </style>
-</head>
+    .done-btn:hover {
+        background-color: #45a049;
+    }
+</style>
 <body>
-
     <div class="navbar">
-        <div>
-            <img src="imagens/logo.png" alt="Logo" style="height: 40px;  border-radius: 25px; margin-right: 1rem;">
-            <a href="#">Funcionalidades</a>
-            <a href="#">Preços</a>
-            <a href="#">Perguntas frequentes</a>
-            <a href="#">Contato</a>
+        <div class="alinhar">
+            <a href="inicial.html"><img src="imagens/logo.png" alt="Logo" style="height: 40px;  border-radius: 25px; margin-right: 1rem;"></a>
+            <a href="perfil.html">Meu Perfil</a>
+            <a href="calendario.html">Calendario</a>
+            <a href="planoalimentar.html">Plano Alimentar</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Seção para Café da Manhã -->
+        <div class="meal-section" onclick="toggleDetails('breakfast')">
+            <h3><img src="icone-cafe.png" alt="Ícone Café da Manhã">Café da Manhã</h3>
+            <div class="meal-details" id="breakfast">
+                <p>Leite de vaca desnatado UHT - 1 copo americano duplo (400ml)</p>
+                <p>Banana - 1 unidade média (40g)</p>
+                <p>Maçã - 1 unidade média (130g)</p>
+                <p>Morango - 10 unidades médias (120g)</p>
+                <p>Semente de linhaça - 3 colheres de sopa cheias (45g)</p>
+                <p>Whey protein concentrado - 1 medidor (30g)</p>
+                <p>Calorias: 250 | Proteínas: 20g | Carboidratos: 5g | Gorduras: 15g</p>
+                <button class="done-btn">Marcar como Feito</button>
+            </div>
         </div>
 
-<div class="container">
-    <header class="header">
-        <input type="text" placeholder="Procurar Paciente...">
-        <div class="user-info">
-            <h2>Gustavo Henrique</h2>
-            <p>21 anos | 1.8 m | 80 kg</p>
-            <span>Objetivo: perder peso</span>
+        <!-- Seção para Almoço -->
+        <div class="meal-section" onclick="toggleDetails('lunch')">
+            <h3><img src="icone-almoco.png" alt="Ícone Almoço">Almoço</h3>
+            <div class="meal-details" id="lunch">
+                <p>Sobrecoxa de frango assada - 2 unidades (100g)</p>
+                <p>Arroz branco - 4 colheres (180g)</p>
+                <p>Feijão preto - 1 concha (140g)</p>
+                <p>Brócolis cozido - 2 colheres (54g)</p>
+                <p>Tangerina Ponkã - 1 unidade (54g)</p>
+                <p>Calorias: 500 | Proteínas: 35g | Carboidratos: 45g | Gorduras: 15g</p>
+                <button class="done-btn">Marcar como Feito</button>
+            </div>
         </div>
-    </header>
 
-    <section class="sections">
-        <div class="card anamneses">
-            <h3>Anamneses</h3>
-            <ul>
-                <li>05/06/2015 - Anamnese <button>Editar</button></li>
-                <li>29/05/2015 - Anamnese do Paciente Gustavo <button>Editar</button></li>
-                <li>28/05/2015 - Outra anamnese com a data alterada <button>Editar</button></li>
-            </ul>
-            <button class="add-btn">+ Adicionar</button>
+        <!-- Seção para Lanche -->
+        <div class="meal-section" onclick="toggleDetails('snack')">
+            <h3><img src="icone-lanche.png" alt="Ícone Lanche">Lanche</h3>
+            <div class="meal-details" id="snack">
+                <p>Torrada integral - 3 unidades (30g)</p>
+                <p>Creme de ricota light - 2 colheres de sopa (40g)</p>
+                <p>Calorias: 400 | Proteínas: 30g | Carboidratos: 10g | Gorduras: 25g</p>
+                <button class="done-btn">Marcar como Feito</button>
+            </div>
         </div>
-        
-        <div class="card antropometricas">
-            <h3>Avaliações Antropométricas</h3>
-            <ul>
-                <li>29/05/2015 - Avaliação de Adulto <button>Editar</button></li>
-                <li>29/05/2015 - Outra Avaliação do Adolescente <button>Editar</button></li>
-            </ul>
-            <button class="add-btn">+ Adicionar</button>
-        </div>
-        
-        <div class="card laboratoriais">
-            <h3>Avaliações Laboratoriais</h3>
-            <ul>
-                <li>08/06/2015 - Endoscopia <button>Editar</button></li>
-                <li>28/05/2015 - Lipídios <button>Editar</button></li>
-                <li>14/05/2015 - Bio <button>Editar</button></li>
-            </ul>
-            <button class="add-btn">+ Adicionar</button>
-        </div>
-        
-        <div class="card alimentares">
-            <h3>Recordatórios Alimentares</h3>
-            <ul>
-                <li>08/06/2015 - Novo Recordatório Alimentar <button>Editar</button></li>
-                <li>01/06/2015 - Recordatório Alimentar de Fevereiro <button>Editar</button></li>
-            </ul>
-            <button class="add-btn">+ Adicionar</button>
-        </div>
-    </section>
-</div>
 
+        <!-- Seção para Jantar -->
+        <div class="meal-section" onclick="toggleDetails('dinner')">
+            <h3><img src="icone-jantar.png" alt="Ícone Jantar">Jantar</h3>
+            <div class="meal-details" id="dinner">
+                <p>Atum grelhado/assado - 1 filé (100g)</p>
+                <p>Alface - 2 folhas (20g)</p>
+                <p>Rúcula - 1 pegador (8g)</p>
+                <p>Tomate cereja - 5 unidades (50g)</p>
+                <p>Inhame cozido - 3 colheres (186g)</p>
+                <p>Beterraba cozida - 1 colher de arroz (38g)</p>
+                <p>Grão de Bico cozido - 2 colheres (110g)</p>
+                <p>Calorias: 400 | Proteínas: 30g | Carboidratos: 10g | Gorduras: 25g</p>
+                <button class="done-btn">Marcar como Feito</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleDetails(mealId) {
+            var details = document.getElementById(mealId);
+            if (details.style.display === "none" || details.style.display === "") {
+                details.style.display = "block";
+            } else {
+                details.style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>
