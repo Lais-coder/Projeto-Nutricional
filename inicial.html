@@ -39,6 +39,11 @@
             z-index: 1;
         }
 
+        .alinhar{
+            display: flex;
+            align-items: center;
+        }
+
         .navbar a {
             margin: 0 1rem;
             text-decoration: none;
@@ -131,11 +136,11 @@
 <body>
 
     <div class="navbar">
-        <div>
+        <div class="alinhar">
             <img src="imagens/logo.png" alt="Logo" style="height: 40px;  border-radius: 25px; margin-right: 1rem;">
-            <a href="#">Funcionalidades</a>
-            <a href="#">Preços</a>
-            <a href="#">Perguntas frequentes</a>
+            <a href="perfil.html">Meu Perfil</a>
+            <a href="calendario.html">Calendario</a>
+            <a href="planoalimentar.html">Plano Alimentar</a>
             <a href="#">Contato</a>
         </div>
 
@@ -146,7 +151,7 @@
         <h1><span class="highlight">Alimenta</span> </h1>
         <h1>seus objetivos</h1>
         <p>Seu plano, sua nutrição, sua melhor saúde.</p>
-        <button class="criar">Criar conta</button>
+        <a href="criar.html"><button class="criar">Comece agora</button></a>
         <a href="login.html"><button class="entrar">Já tenho uma conta</button></a>
     </div>
 </body>

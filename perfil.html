@@ -25,34 +25,32 @@ body {
 }
 
 /* Estilo do Header com links */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 30px;
-    background-color: #3a6e3a;
-    color: white;
-    width: 100%;
-}
+.navbar {
+            width: 100%;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1;
+        }
 
-header .logo span {
-    font-weight: bold;
-}
+        .navbar a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
 
-header nav a {
-        color: aliceblue;
-        text-decoration: none;
-        font-size: 18px;
-        padding: 10px;
-        border-radius: 5px;
-        transition: background-color 0.3s;
-}
-
-header .conta {
-    background-color: #fa8231;
-    padding: 5px 10px;
-    border-radius: 4px;
-}
+        .navbar a:hover {
+            color: #00796b;
+        }
+        .iniciar{
+            display: flex;
+            align-items: center;
+        }
 
 /* Container do perfil */
 .container {
@@ -216,16 +214,14 @@ header .conta {
 </head>
 <body>
     <!-- Header com links de navegação -->
-    <header>
-        <img src="logo.png" alt="Logo" style="height: 60px;  border-radius: 25px; margin-right: 1rem;">
-        <div class="logo">Comida <span>Boa</span></div>
-        <nav>
+    <div class="navbar">
+        <div class="iniciar">
+            <a href="inicial.html"><img src="imagens/logo.png" alt="Logo" style="height: 40px;  border-radius: 25px; margin-right: 1rem;"></a>
             <a href="perfil.html">Meu Perfil</a>
+            <a href="calendario.html">Calendario</a>
             <a href="planoalimentar.html">Plano Alimentar</a>
-            <a href="calendario.html">Calendário</a>
-        </nav>
-        <div class="conta">Minha Conta</div>
-    </header>
+            <a href="#">Contato</a>
+        </div>
 
     <!-- Container principal com perfil -->
     <div class="container">
