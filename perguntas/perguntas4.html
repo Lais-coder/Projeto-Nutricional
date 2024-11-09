@@ -11,7 +11,7 @@
             margin: 0;
             padding: 0;
         }
-         header {
+        header {
             display: flex;
             align-items: center;
             padding: 12px 20px;
@@ -23,7 +23,7 @@
             background: none;
             border: none;
             font-size: 24px;
-            color: #331a5c;
+            color: #333;
             cursor: pointer;
             transition: color 0.3s;
         }
@@ -35,7 +35,7 @@
         .progress-bar {
             flex: 1;
             height: 5px;
-            background-color: #7668A6;
+            background-color: #7c64a4;
             margin-left: 15px;
             border-radius: 10px;
             transition: width 0.5s ease;
@@ -50,19 +50,6 @@
             overflow: hidden;
             color: #333;
             position: relative;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 600px;
-            border-radius: 12px;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            transition: transform 0.3s ease;
-        }
-
-        .container:hover {
-            transform: translateY(-5px);
         }
 
         /* Fundo interativo com frutas e vegetais */
@@ -189,26 +176,26 @@
     </style>
 </head>
 <body>
-    <div class="container">
-
     <div class="quiz-container" id="quiz-container">
         <header>
-            <a href="../criar.html"><button class="back-btn">&larr;</button></a>
+            <a href="perguntas2.html"><button class="back-btn">&larr;</button></a>
             <div class="progress-bar" style="width: 70%;"></div>
         </header> 
         <h1>Questionário</h1>
 
         <form id="quizForm">
             <div class="question">
-                <p>Você costuma ter uma boa noite de sono?</p>
+                <p>Como você se classifica?</p>
                 <div class="options">
                     <input type="radio" name="question1" value="A" id="q1a">
-                    <label for="q1a">Sim</label>
+                    <label for="q1a">Jovem</label>
                     <input type="radio" name="question1" value="B" id="q1b">
-                    <label for="q1b">Não</label>
+                    <label for="q1b">Adulto</label>
+                    <input type="radio" name="question1" value="B" id="q1b">
+                    <label for="q1b">Idoso</label>
+
                 </div>
-            <a href="perguntas2.html"><button type="button" class="submit-button" onclick="submitQuiz()">Próximo</button></a>
-           
+                <a href="perguntas5.html"><button type="button" class="submit-button" onclick="submitQuiz()">Próximo</button></a>
         </form>
 
         <div id="result" class="result"></div>

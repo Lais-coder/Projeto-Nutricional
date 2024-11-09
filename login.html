@@ -3,151 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login com Perguntas de Segurança</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Login</title>
     <style>
-/* Paleta de Cores : 
-#DC8DF2 , #CA6DF2 , #8836BF , #56208C , #100126 */
-*{
-    font-family:  -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    padding: 0px;
-    margin: 0px;
-    box-sizing: border-box;
-}
-body , html{
-    background-color: #8836BF;
-    height: 100vh;
-    width: 100vw;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-main{
-    height: 100vh;
-    width: vw;
-}
-#login{ 
-    background-color: white;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    background-repeat: no-repeat;
-    overflow: hidden;
-    width: 500px;
-    height: 550px;
-    border-radius: 20px;
-    box-shadow: 3px 3px 15px #100126;
-    transition:  width .5s, heigth .5s;
-    transition-timing-function: ease;
-    transform: translate(-50%, -50%);
-}
-section#login > div#imagem{
-    background:#8836BF url(Computador.avif) ;
-    background-position: left top;
-    height: 300px;
-}
-section#login > div#formulario{
-    padding: 5px;
-    display: block;
-}
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9; /* Cor de fundo suave */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
 
-form > div.campo{
-    background-color:  #8836BF;
-    display: block;
-    width: 100%;
-    height: 40px;
-    border-radius: 6px;
-    margin: 5px 0px;
-}
-div.campo > label{
-    display: none;
-}
-div.campo {
-    color: white;
-    padding: 4px;
-}
-div.campo > input {
-    height: 100%;
-    border: 0px;
-    border-radius: 6px;
-    width: calc(100% - 39px);
-    transform: translateY(-2px);
-}
-h1 {
-    text-align: center;
-    margin-bottom: 2px;
-}
-p{
-    text-align: center;
-}
-form > a > input[type="submit"]{
-    display: block;
-    font-size: 1em;
-    width: 100%;
-    height: 30px;
-    background-color:#56208C;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-}
-form > input[type="submit"]:hover{
-    background-color:#220c38 ;
-}
-form > a.botao{
-    display: block;
-    margin-top: 5px;
-    text-align: center;
-    font-size: 1em;
-    width: 100%;
-    height: 30px;
-    background-color: white;
-    border: 1px solid #56208C;
-    border-radius: 6px ;
-    text-decoration: none;
-    color:#56208C;
-}
-form > a.botao:hover{
-    color: #041f00;
-}
+        .login-container {
+            background-color: #fff; /* Branco para o fundo do formulário */
+            border-radius: 12px;
+            padding: 40px 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 380px;
+        }
+
+        .login-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 28px;
+            color: #6a11cb; /* Roxo para o título */
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 16px;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            font-size: 16px;
+            color: #333;
+            transition: border 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .form-group input:focus {
+            border-color: #6a11cb; /* Roxo no foco */
+            box-shadow: 0 0 8px rgba(106, 17, 203, 0.7);
+        }
+
+        .form-group input::placeholder {
+            color: #bbb;
+        }
+
+        .form-group button {
+            width: 100%;
+            padding: 12px;
+            background-color: #4caf50; /* Verde para o botão */
+            border: none;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-group button:hover {
+            background-color: #45a049; /* Efeito de hover no botão */
+        }
+
+        .signup-link {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .signup-link a {
+            color: #6a11cb; /* Roxo para o link */
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .signup-link a:hover {
+            color: #4caf50; /* Verde no hover do link */
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .login-container {
+                padding: 30px 20px;
+            }
+
+            .login-container h2 {
+                font-size: 24px;
+            }
+
+            .form-group input {
+                font-size: 14px;
+            }
+
+            .form-group button {
+                font-size: 14px;
+            }
+        }
     </style>
 </head>
 <body>
-    <!DOCTYPE html>
-    <html lang="pt-br">
-    <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Portal de Login</title>
-      <link rel="stylesheet" href="estilos/style.css">
-      <link rel="stylesheet" href="estilos/mediaquerie.css">
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=group_add,lock_person" />
-    </head>
-    <body>
-      <main>
-        <section id="login">
-          <div id="imagem">
-            <p>Imagem</p>
-          </div>
-          <div id="formulario">
-            <h1>Portal de Login</h1>
-            <p>Seja bem-vindo(a) novamente. <br>Faça login para acessar sua conta!</p>
-            <form action="perfil.html" method="post" autocomplete="on">
-              <div class="campo">
-                <span class="material-symbols-outlined">group_add</span>
-                <input type="email" name="login" id="ilogin" placeholder="Seu Email" autocomplete="email" required>
-                <label for="ilogin">Login</label>
-              </div>
-              <div class="campo">
-                <span class="material-symbols-outlined">lock_person</span>
-                <input type="password" name="senha" id="isenha" placeholder="Sua Senha"                         autocomplete="current-password" required>
-                    <label for="isenha">Senha</label>
-              </div>
-                <a href="perfil.html"><input type="submit" value="Entrar"></a>
-                <a href="Esqueci.html" class="botao">Esqueci a Senha</a>
-            </form>
-          </div>
-        </section>
-      </main>
-    </body>
-    </html>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form action="perfil.html" method="get"> <!-- Alterado para redirecionar diretamente -->
+            <div class="form-group">
+                <label for="username">Usuário</label>
+                <input type="text" id="username" name="username" placeholder="Digite seu nome de usuário" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Senha</label>
+                <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
+            </div>
+            <div class="form-group">
+                <!-- O formulário agora redireciona para "perfil.html" -->
+                <button type="submit">Entrar</button>
+            </div>
+        </form>
+        <div class="signup-link">
+            <p>Não tem uma conta? <a href="registro.html">Cadastre-se aqui</a></p>
+        </div>
+    </div>
 </body>
 </html>
