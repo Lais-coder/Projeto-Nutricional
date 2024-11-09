@@ -8,7 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet">
     <title>Perfil Duolingo</title>
     <style>
-        /* Remover a barra de rolagem */
         * {
             font-family: "Marcellus", serif;
         }
@@ -17,7 +16,7 @@
             margin: 0;
             padding: 0;
             height: 100%;
-            overflow: auto; /* Desativa a rolagem */
+            overflow: auto;
             font-family: 'Arial', sans-serif;
             background-color: #f7faff;
             color: #333;
@@ -48,7 +47,7 @@
             width: 90%;
             max-width: 1200px;
             margin: 20px auto;
-            overflow: hidden; /* Evita que o conteúdo ultrapasse os limites */
+            overflow: hidden;
         }
 
         .profile {
@@ -144,6 +143,7 @@
             border-radius: 8px;
             padding: 15px;
             display: flex;
+            justify-content: space-between;
             align-items: center;
             margin-top: 15px;
             transition: background-color 0.3s ease;
@@ -159,14 +159,14 @@
             margin-right: 15px;
         }
 
-        .meal h3 {
+        .meal h3, .meal p {
             margin: 0;
-            font-size: 18px;
-            font-weight: 600;
-            color: #333;
         }
-        .meal p {
-            margin-left: 850px;
+
+        .meal-content {
+            white-space: nowrap;
+            flex-grow: 1;
+            text-align: right;
         }
     </style>
 </head>
@@ -203,7 +203,7 @@
                 </div>
                 <div class="stat-box">
                     <h3>Problemas de saúde</h3>
-                    <p> Sim </p>
+                    <p>Sim</p>
                 </div>
                 <div class="stat-box">
                     <h3>Sono Regular</h3>
@@ -216,28 +216,27 @@
 
                 <div class="meal">
                     <img src="imagens/do-utilizador.png" alt="Nome">
-                    <h3>Nome</h3> 
-                    <p>Maria Madalena de Sousa</p>
+                    <h3>Nome</h3>
+                    <p class="meal-content">Maria Madalena de Sousa</p>
                 </div>
 
                 <div class="meal">
                     <img src="imagens/idade.png" alt="Idade">
                     <h3>Idade</h3>
-                    <p>70</p>
+                    <p class="meal-content">70</p>
                 </div>
 
                 <div class="meal">
                     <img src="imagens/escala-de-peso.png" alt="Peso">
                     <h3>Peso</h3>
-                    <p>60kg</p>
+                    <p class="meal-content">60kg</p>
                 </div>
 
                 <div class="meal">
                     <img src="imagens/governante.png" alt="Altura">
                     <h3>Altura</h3>
-                    <p>1,60</p>
+                    <p class="meal-content">1,60</p>
                 </div>
-
             </div>
         </div>
     </div>
