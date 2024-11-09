@@ -38,11 +38,12 @@
     
         .calendar-container {
                 margin: 0 auto;
+                margin-top: 3px;
                 width: 95%; 
-                max-width: 1100px; 
                 background-color: #fff; 
                 padding: 10px;
-                border-radius: 10px; 
+                padding-top: 2px;
+                border-radius: 0px 0px 10px 10px; 
                 box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); }
                           
              h1 { text-align: center; 
@@ -56,13 +57,22 @@
                                   
             .calendar th, 
                                   
-            .calendar td { width: 14.2%; 
+            .calendar td {
+                width: 14.2%; 
                 text-align: center;
                 padding: 5px;
-                border: 1px solid #ddd; } 
-            .calendar th { background-color:#7B67A6; 
+                border: 1px solid #ddd;
+             } 
+
+            .calendar th {
+                background-color:#7B67A6; 
                 color: white; } 
-            .calendar td { background-color: #f9f9f9; cursor: pointer; } 
+
+            .calendar td { 
+                background-color: #f9f9f9; 
+                cursor: pointer;
+             } 
+
             .calendar td {
                 transition: background-color 0.7s ease, border-radius 0.3s ease;
 }

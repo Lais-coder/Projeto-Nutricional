@@ -22,7 +22,7 @@
 
         h1 {
             text-align: center;
-            color: #ddd;
+            color: #691b9a;
             border-radius: 20px;
         }
 
@@ -71,7 +71,7 @@
         .meal {
             background-color: white;
             border-radius: 8px;
-            border: 0.5px solid #2c1e42;
+            border: 0.5px solid #2c1e424b;
             margin-left: 8px;
             margin-right: 8px;
             margin-bottom: 10px;
@@ -128,7 +128,7 @@
 
         footer {
             text-align: center;
-            background-color: #3333336c;
+            background-color: #691b9a6e;
             color: white;
             padding: 20px;
             position: relative;
@@ -178,6 +178,10 @@
         .question-box button:hover {
             background-color: #357ae8;
         }
+
+        .destaque{
+            color: #625186;
+        }
     </style>
 </head>
 <body>
@@ -198,14 +202,14 @@
         </header>
 
         <div class="meal" onclick="toggleMealPlan('breakfast')">
-            <img src="imagens/manha.png" alt="icon">
+            <img src="imagens/manha-removebg-preview.png" alt="icon">
             <h3>Café da Manhã</h3>
         </div>
         <div id="breakfast" class="meal-plan">
             <table>
                 <tr>
-                    <th>Alimentos</th>
-                    <th>Quantidade</th>
+                    <th><SPAN class="destaque">Alimentos</SPAN></th>
+                    <th><SPAN class="destaque">Quantidade</SPAN></th>
                 </tr>
                 <tr>
                     <td>Leite de vaca desnatado UHT</td>
@@ -235,14 +239,14 @@
         </div>
 
         <div class="meal" onclick="toggleMealPlan('lunch')">
-            <img src="imagens/almoço.png" alt="icon">
+            <img src="imagens/almoço-removebg-preview.png" alt="icon">
             <h3>Almoço</h3>
         </div>
         <div id="lunch" class="meal-plan">
             <table>
                 <tr>
-                    <th>Alimentos</th>
-                    <th>Quantidade</th>
+                    <th><SPAN class="destaque">Alimentos</SPAN></th>
+                    <th><SPAN class="destaque">Quantidade</SPAn></th>
                 </tr>
                 <tr>
                     <td>Brócolis cozido</td>
@@ -268,14 +272,14 @@
         </div>
 
         <div class="meal" onclick="toggleMealPlan('snack')">
-            <img src="imagens/tarde.jpg" alt="icon">
-            <h3>Merenda</h3>
+            <img src="imagens/tarde-removebg-preview.png" alt="icon">
+            <h3>Lanche</h3>
         </div>
         <div id="snack" class="meal-plan">
             <table>
                 <tr>
-                    <th>Alimentos</th>
-                    <th>Quantidade</th>
+                    <th><SPAN class="destaque">Alimentos</SPAN></th>
+                    <th><SPAN class="destaque">Quantidade</SPAN></th>
                 </tr>
                 <tr>
                     <td>Torrada integral</td>
@@ -289,14 +293,14 @@
         </div>
 
         <div class="meal" onclick="toggleMealPlan('dinner')">
-            <img src="imagens/jantar.png" alt="icon">
+            <img src="imagens/jantar-removebg-preview.png" alt="icon">
             <h3>Jantar</h3>
         </div>
         <div id="dinner" class="meal-plan">
             <table>
                 <tr>
-                    <th>Alimentos</th>
-                    <th>Quantidade</th>
+                    <th><SPAN class="destaque">Alimentos</SPAN></th>
+                    <th><SPAN class="destaque">Quantidade</SPAN></th>
                 </tr>
                 <tr>
                     <td>Alface</td>
@@ -330,14 +334,14 @@
         </div>
 
         <div class="meal" onclick="toggleMealPlan('supper')">
-            <img src="imagens/ceia.png" alt="icon">
+            <img src="imagens/ceia-removebg-preview.png" alt="icon">
             <h3>Ceia</h3>
         </div>
         <div id="supper" class="meal-plan">
             <table>
                 <tr>
-                    <th>Alimentos</th>
-                    <th>Quantidade</th>
+                    <th><SPAN class="destaque">Alimentos</SPAN></th>
+                    <th><SPAN class="destaque">Quantidade</SPAN></th>
                 </tr>
                 <tr>
                     <td>Abacate</td>
@@ -366,7 +370,10 @@
                 selectedMeal.style.display = 'block';
             }
         }
+        
     </script>
+
+    
 
 </body>
 </html>

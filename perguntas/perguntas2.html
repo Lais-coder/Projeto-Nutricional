@@ -11,10 +11,10 @@
             margin: 0;
             padding: 0;
         }
-        header {
+         header {
             display: flex;
             align-items: center;
-            padding: 12px 20px;
+            padding: 10px 10px;
             background-color: #f0f0f0;
             border-bottom: 1px solid #ddd;
         }
@@ -23,7 +23,7 @@
             background: none;
             border: none;
             font-size: 24px;
-            color: #333;
+            color: #331a5c;
             cursor: pointer;
             transition: color 0.3s;
         }
@@ -35,7 +35,7 @@
         .progress-bar {
             flex: 1;
             height: 5px;
-            background-color: #7c64a4;
+            background-color: #7668A6;
             margin-left: 15px;
             border-radius: 10px;
             transition: width 0.5s ease;
@@ -52,35 +52,17 @@
             position: relative;
         }
 
-        /* Fundo interativo com frutas e vegetais */
-        .background {
-            position: absolute;
+        .container {
             width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
+            max-width: 600px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
             overflow: hidden;
-            z-index: -1;
+            transition: transform 0.3s ease;
         }
 
-        .background img {
-            position: absolute;
-            width: 100px;
-            height: 100px;
-            opacity: 0.3;
-            animation: float 20s infinite ease-in-out;
-        }
-
-        @keyframes float {
-            0% {
-                transform: translateY(0) translateX(0);
-            }
-            50% {
-                transform: translateY(-20px) translateX(20px);
-            }
-            100% {
-                transform: translateY(0) translateX(0);
-            }
+        .container:hover {
+            transform: translateY(-5px);
         }
 
         .quiz-container {
@@ -132,7 +114,7 @@
 
         .submit-button {
             width: 100%;
-            padding: 15px;
+            padding: 20px;
             background-color: #6a1b9a;
             color: white;
             border: none;
@@ -176,12 +158,14 @@
     </style>
 </head>
 <body>
-    <div class="quiz-container" id="quiz-container">
+    <div class="container">
         <header>
             <a href="perguntas.html"><button class="back-btn">&larr;</button></a>
             <div class="progress-bar" style="width: 70%;"></div>
         </header> 
+    <div class="quiz-container" id="quiz-container">
         <h1>Questionário</h1>
+
         <form id="quizForm">
             <div class="question">
                 <p>Você tem algum problema de saúde?</p>
@@ -191,9 +175,10 @@
                     <input type="radio" name="question1" value="B" id="q1b">
                     <label for="q1b">Não</label>
                 </div>
-
-                <a href="perguntas3.html"><button type="button" class="submit-button" onclick="submitQuiz()">Próximo</button></a>
+            </div>
+            <a href="perguntas3.html"><button type="button" class="submit-button" onclick="submitQuiz()">Próximo</button></a>
         </form>
+
         <div id="result" class="result"></div>
         <div id="loading" class="loading">Carregando resultado...</div>
     </div>
@@ -211,24 +196,26 @@
                 const form = document.getElementById("quizForm");
                 const answers = {
                     question1: "B",
-                    question2: "B",
+                    question2: "B",  // você precisará ajustar as questões conforme elas avançam
                 };
 
                 let score = 0;
-                let totalQuestions = 2;
+                let totalQuestions = 2; // o total de questões está como 2 aqui
 
                 for (let i = 1; i <= totalQuestions; i++) {
-                    const selectedAnswer = form.querySelector(input[name="question${i}"]:checked);
-                    if (selectedAnswer && selectedAnswer.value === answers[question${i}])
+                    // Corrigindo a interpolação de strings com crase
+                    const selectedAnswer = form.querySelector(`input[name="question${i}"]:checked`);
+                    if (selectedAnswer && selectedAnswer.value === answers[`question${i}`]) {
                         score++;
                     }
-                
+                }
 
-               { resultContainer.innerHTML = Você acertou ${score} de ${totalQuestions} questões.;
+                resultContainer.innerHTML = `Você acertou ${score} de ${totalQuestions} questões.`;
                 resultContainer.classList.add(score === totalQuestions ? 'correct' : 'incorrect');
                 loadingContainer.style.display = "none";
                 quizContainer.classList.remove("hidden");
-               }
+            }, 1000); // Simulando o tempo de carregamento
+        }
     </script>
 
 </body>

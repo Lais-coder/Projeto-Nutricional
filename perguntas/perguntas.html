@@ -14,7 +14,7 @@
          header {
             display: flex;
             align-items: center;
-            padding: 12px 20px;
+            padding: 10px 10px;
             background-color: #f0f0f0;
             border-bottom: 1px solid #ddd;
         }
@@ -142,10 +142,9 @@
             background: #e0e0e0;
         }
 
-
         .submit-button {
             width: 100%;
-            padding: 15px;
+            padding: 20px;
             background-color: #6a1b9a;
             color: white;
             border: none;
@@ -190,12 +189,11 @@
 </head>
 <body>
     <div class="container">
-
-    <div class="quiz-container" id="quiz-container">
         <header>
             <a href="../criar.html"><button class="back-btn">&larr;</button></a>
             <div class="progress-bar" style="width: 70%;"></div>
         </header> 
+    <div class="quiz-container" id="quiz-container">
         <h1>Questionário</h1>
 
         <form id="quizForm">
@@ -207,8 +205,8 @@
                     <input type="radio" name="question1" value="B" id="q1b">
                     <label for="q1b">Não</label>
                 </div>
+            </div>
             <a href="perguntas2.html"><button type="button" class="submit-button" onclick="submitQuiz()">Próximo</button></a>
-           
         </form>
 
         <div id="result" class="result"></div>
@@ -235,18 +233,20 @@
                 let totalQuestions = 2;
 
                 for (let i = 1; i <= totalQuestions; i++) {
-                    const selectedAnswer = form.querySelector(input[name="question${i}"]:checked);
-                    if (selectedAnswer && selectedAnswer.value === answers[question${i}])
+                    // Corrigindo a interpolação de string
+                    const selectedAnswer = form.querySelector(`input[name="question${i}"]:checked`);
+                    if (selectedAnswer && selectedAnswer.value === answers[`question${i}`]) {
                         score++;
                     }
-                
+                }
 
-               { resultContainer.innerHTML = Você acertou ${score} de ${totalQuestions} questões.;
+                // Corrigindo a forma de exibir o resultado
+                resultContainer.innerHTML = `Você acertou ${score} de ${totalQuestions} questões.`;
                 resultContainer.classList.add(score === totalQuestions ? 'correct' : 'incorrect');
                 loadingContainer.style.display = "none";
                 quizContainer.classList.remove("hidden");
-               }
+            }, 1000); // Simulando o tempo de carregamento
+        }
     </script>
-
 </body>
 </html>
