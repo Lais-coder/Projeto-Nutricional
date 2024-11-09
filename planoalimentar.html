@@ -14,39 +14,50 @@
         h1{
             text-align: center;
             color: #ddd;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            border-radius: 20px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.356);
         }
         .container {
             width: 100%;
             margin: auto;
             background-color: #7c64a4;
             height: 500px;
-            
         }
-        .navbar { width: 100%; 
+        .navbar { 
+            width: 100%; 
             display: flex; 
             justify-content: space-between; 
             align-items: center; 
             padding: 0.5rem 1rem; 
             background-color: rgba(255, 255, 255, 0.8); 
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-             position: relative; z-index: 1; } 
-             
-             .alinhar{ 
-                display: flex;
-                align-items: center; } 
-            .navbar a { margin: 0 0.5rem; 
-                text-decoration: none; 
-                color: #333; font-weight: 500;
-                transition: color 0.3s; } 
-            .navbar a:hover { color: #00796b; } 
-            .calendar-container {
-                margin: 0 auto;
-                width: 90%; 
-                max-width: 800px; 
-                background-color: #fff; 
-                padding: 10px;
-                border-radius: 10px; 
-                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); }
+            position: relative; 
+            z-index: 1; 
+        } 
+        .alinhar{ 
+            display: flex;
+            align-items: center; 
+        } 
+        .navbar a { 
+            margin: 0 0.5rem; 
+            text-decoration: none; 
+            color: #333; 
+            font-weight: 500;
+            transition: color 0.3s; 
+        } 
+        .navbar a:hover { 
+            color: #00796b; 
+        } 
+        .calendar-container {
+            margin: 0 auto;
+            width: 90%; 
+            max-width: 800px; 
+            background-color: #fff; 
+            padding: 10px;
+            border-radius: 10px; 
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+        }
         .meal {
             background-color: rgba(255, 255, 255, 0.658);
             border-radius: 8px;
@@ -74,9 +85,20 @@
             margin: 10px 0;
             border: 1px solid #ddd;
         }
-        .meal-plan p {
+        .meal-plan p, .meal-plan table {
             margin: 0;
             padding: 5px 0;
+        }
+        .meal-plan table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .meal-plan table, .meal-plan th, .meal-plan td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        .meal-plan th {
+            background-color: #f4f4f4;
         }
     </style>
 </head>
@@ -85,24 +107,49 @@
 <div class="container">
     <div class="navbar">
         <div class="alinhar">
-            <a href="inicial.html"><img src="imagens/logo.png" alt="Logo" style="height: 40px;  border-radius: 25px; margin-right: 1rem;"></a>
+            <a href="inicial.html"><img src="imagens/logo.png" alt="Logo" style="height: 40px; border-radius: 25px; margin-right: 1rem;"></a>
             <a href="perfil.html">Meu Perfil</a>
             <a href="calendario.html">Calendario</a>
             <a href="planoalimentar.html">Plano Alimentar</a>
         </div>
     </div> 
     <h1>PLANO ALIMENTAR</h1>
+
     <div class="meal" onclick="toggleMealPlan('breakfast')">
         <img src="imagens/manha.png" alt="icon">
         <h3>Café da Manhã</h3>
     </div>
     <div id="breakfast" class="meal-plan">
-        <p>Leite de vaca desnatado UHT - 1 Copo americano duplo (240ml)</p>
-        <p>Banana - 1 Unidade média (40g)</p>
-        <p>Maçã - 1 Unidade média (130g)</p>
-        <p>Morango - 10 Unidades médias (120g)</p>
-        <p>Semente de linhaça - 3 Colheres de sopa cheias (45g)</p>
-        <p>Whey protein concentrado - 1 Medidor (30g)</p>
+        <table>
+            <tr>
+                <th>Alimentos</th>
+                <th>Quantidade</th>
+            </tr>
+            <tr>
+                <td>Leite de vaca desnatado UHT</td>
+                <td>1 Copo americano duplo (240ml)</td>
+            </tr>
+            <tr>
+                <td>Banana</td>
+                <td>1 Unidade média (40g)</td>
+            </tr>
+            <tr>
+                <td>Maçã</td>
+                <td>1 Unidade média (130g)</td>
+            </tr>
+            <tr>
+                <td>Morango</td>
+                <td>10 Unidades médias (120g)</td>
+            </tr>
+            <tr>
+                <td>Semente de linhaça</td>
+                <td>3 Colheres de sopa cheias (45g)</td>
+            </tr>
+            <tr>
+                <td>Whey protein concentrado</td>
+                <td>1 Medidor (30g)</td>
+            </tr>
+        </table>
     </div>
 
     <div class="meal" onclick="toggleMealPlan('lunch')">
@@ -110,11 +157,32 @@
         <h3>Almoço</h3>
     </div>
     <div id="lunch" class="meal-plan">
-        <p>Brócolis cozido - 2 Colheres de servir (54g)</p>
-        <p>Sobrecoxa de frango assada - 2 Unidades pequenas (100g)</p>
-        <p>Arroz branco cozido - 4 Colheres de arroz cheias (180g)</p>
-        <p>Feijão preto cozido - 1 Concha cheia (140g)</p>
-        <p>Tangerina Ponkã - 1 Unidade média (135g)</p>
+        <table>
+            <tr>
+                <th>Alimentos</th>
+                <th>Quantidade</th>
+            </tr>
+            <tr>
+                <td>Brócolis cozido</td>
+                <td>2 Colheres de servir (54g)</td>
+            </tr>
+            <tr>
+                <td>Sobrecoxa de frango assada</td>
+                <td>2 Unidades pequenas (100g)</td>
+            </tr>
+            <tr>
+                <td>Arroz branco cozido</td>
+                <td>4 Colheres de arroz cheias (180g)</td>
+            </tr>
+            <tr>
+                <td>Feijão preto cozido</td>
+                <td>1 Concha cheia (140g)</td>
+            </tr>
+            <tr>
+                <td>Tangerina Ponkã</td>
+                <td>1 Unidade média (135g)</td>
+            </tr>
+        </table>
     </div>
 
     <div class="meal" onclick="toggleMealPlan('snack')">
@@ -122,8 +190,20 @@
         <h3>Merenda</h3>
     </div>
     <div id="snack" class="meal-plan">
-        <p>Torrada integral - 3 Unidades (30g)</p>
-        <p>Creme de ricota light - 2 Colheres de sopa (40g)</p>
+        <table>
+            <tr>
+                <th>Alimentos</th>
+                <th>Quantidade</th>
+            </tr>
+            <tr>
+                <td>Torrada integral</td>
+                <td>3 Unidades (30g)</td>
+            </tr>
+            <tr>
+                <td>Creme de ricota light</td>
+                <td>2 Colheres de sopa (40g)</td>
+            </tr>
+        </table>
     </div>
 
     <div class="meal" onclick="toggleMealPlan('dinner')">
@@ -131,13 +211,40 @@
         <h3>Jantar</h3>
     </div>
     <div id="dinner" class="meal-plan">
-        <p>Alface - 2 Folhas médias (20g)</p>
-        <p>Rúcula - 1 Pegador (8g)</p>
-        <p>Tomate cereja - 5 Unidades (50g)</p>
-        <p>Beterraba cozida - 1 Colher de arroz cheia (38g)</p>
-        <p>Atum assado/grelhado - 1 Filé médio (100g)</p>
-        <p>Inhame cozido - 3 Colheres de servir cheias (186g)</p>
-        <p>Grão de bico cozido - 2 Colheres de servir cheias (110g)</p>
+        <table>
+            <tr>
+                <th>Alimentos</th>
+                <th>Quantidade</th>
+            </tr>
+            <tr>
+                <td>Alface</td>
+                <td>2 Folhas médias (20g)</td>
+            </tr>
+            <tr>
+                <td>Rúcula</td>
+                <td>1 Pegador (8g)</td>
+            </tr>
+            <tr>
+                <td>Tomate cereja</td>
+                <td>5 Unidades (50g)</td>
+            </tr>
+            <tr>
+                <td>Beterraba cozida</td>
+                <td>1 Colher de arroz cheia (38g)</td>
+            </tr>
+            <tr>
+                <td>Atum assado/grelhado</td>
+                <td>1 Filé médio (100g)</td>
+            </tr>
+            <tr>
+                <td>Inhame cozido</td>
+                <td>3 Colheres de servir cheias (186g)</td>
+            </tr>
+            <tr>
+                <td>Grão de bico cozido</td>
+                <td>2 Colheres de servir cheias (110g)</td>
+            </tr>
+        </table>
     </div>
 
     <div class="meal" onclick="toggleMealPlan('supper')">
@@ -145,7 +252,16 @@
         <h3>Ceia</h3>
     </div>
     <div id="supper" class="meal-plan">
-        <p>Abacate - 0.5 Unidade pequena (185g)</p>
+        <table>
+            <tr>
+                <th>Alimentos</th>
+                <th>Quantidade</th>
+            </tr>
+            <tr>
+                <td>Abacate</td>
+                <td>0.5 Unidade pequena (185g)</td>
+            </tr>
+        </table>
     </div>
 </div>
 
