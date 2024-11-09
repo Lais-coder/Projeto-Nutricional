@@ -3,12 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calendário de Novembro e Dezembro</title>
+    <title>Calendário</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet">
     <style>
+        *{
+            font-family: "Marcellus", serif;
+        }
          body { 
                 font-family: Arial, sans-serif;  background-color: #f4f4f4; margin: 0; padding: 0; }
-         
-             
    
     .navbar a:hover {
          color:#7B67A6;
@@ -34,8 +38,8 @@
     
         .calendar-container {
                 margin: 0 auto;
-                width: 90%; 
-                max-width: 800px; 
+                width: 95%; 
+                max-width: 1100px; 
                 background-color: #fff; 
                 padding: 10px;
                 border-radius: 10px; 
@@ -71,7 +75,8 @@
                  
             #message-box { margin-top: 10px;
                 text-align: center; 
-                font-size: 16px;
+                font-size: 20px;
+                font-family: "Marcellus", serif;
                 color: #333; }
     </style>
 </head>
@@ -79,7 +84,6 @@
     <div class="navbar">
         <a href="inicial.html"><img src="imagens/logo.png" alt="Logo" style="height: 40px;  border-radius: 25px; margin-right: 1rem;"></a>
         <div class="alinhar">
-           
             <a href="perfil.html">Meu Perfil</a>
             <a href="calendario.html">Calendário</a>
             <a href="planoalimentar.html">Plano Alimentar</a>
@@ -218,29 +222,69 @@
         function showMessage(day, month = 'novembro') {
             const messages = {
                 novembro: {
-                    1: "Mensagem para 1 de novembro",
-                    2: "Mensagem para 2 de novembro",
-                    3: "Mensagem para 3 de novembro",
-                    4: "Mensagem para 4 de novembro",
-                    5: "Mensagem para 5 de novembro",
-                    6: "Mensagem para 6 de novembro",
-                    7: "Mensagem para 7 de novembro",
-                    8: "Mensagem para 8 de novembro",
-                    9: "Mensagem para 9 de novembro",
-                    10: "Mensagem para 10 de novembro",
-                    11: "Mensagem para 11 de novembro",
-                    12: "Mensagem para 12 de novembro",
-                    13: "Mensagem para 9 de novembro",
-                    14: "Mensagem para  de novembro",
-                    // ... Adicione outras mensagens para novembro conforme necessário
+                    1: "Cada pequena mudança é um passo na direção certa.",
+                    2: "Seja paciente com o seu corpo; ele está se adaptando ao seu esforço.",
+                    3: "Você não precisa ser perfeito, só precisa continuar.",
+                    4: "Seu futuro eu vai agradecer as escolhas saudáveis que você faz hoje.",
+                    5: "Comemore cada pequena vitória e siga em frente.",
+                    6: "Cuide do seu corpo; ele é o único lugar onde você realmente vive.",
+                    7: "Os resultados valem o esforço!",
+                    8: "Um passo de cada vez e você chegará lá.",
+                    9: "Seu esforço de hoje será sua motivação amanhã.",
+                    10: "Pequenos passos levam a grandes conquistas.",
+                    11: "Você é mais forte do que imagina.",
+                    12: "A persistência é o caminho para o sucesso.",
+                    13: "Confie no processo, ele vale a pena.",
+                    14: "Cada escolha saudável é uma vitória.",
+                    15: "Lembre-se do porquê começou.",
+                    16: "Cuide de si; você merece o melhor.",
+                    17: "Acredite no seu potencial.",
+                    18: "A disciplina é o que mantém a chama acesa.",
+                    19: "Desafios são oportunidades para crescer.",
+                    20: "Dê o seu melhor, sempre.",
+                    21: "O futuro depende das suas ações de hoje.",
+                    22: "A força vem da persistência.",
+                    23: "Hoje é um bom dia para melhorar.",
+                    24: "Não desista, o esforço será recompensado.",
+                    25: "Você é mais capaz do que imagina.",
+                    26: "Cada escolha saudável conta.",
+                    27: "Invista em si mesmo.",
+                    28: "Seja gentil consigo mesmo.",
+                    29: "Avance com coragem.",
+                    30: "Celebre cada progresso que fizer."
                 },
                 dezembro: {
-                    1: "Mensagem para 1 de dezembro",
-                    2: "Mensagem para 2 de dezembro",
-                    3: "Mensagem para 3 de dezembro",
-                    4: "Mensagem para 4 de dezembro",
-                    5: "Mensagem para 5 de dezembro",
-                    // ... Adicione outras mensagens para dezembro conforme necessário
+                    1: "O esforço de hoje é a conquista de amanhã.",
+                    2: "Tudo começa com o primeiro passo.",
+                    3: "Foque no progresso, não na perfeição.",
+                    4: "Cuide de seu corpo e mente.",
+                    5: "Você está mais forte a cada dia.",
+                    6: "A disciplina é a ponte entre metas e realizações.",
+                    7: "O sacrifício de hoje é o sucesso de amanhã.",
+                    8: "Confie no seu potencial.",
+                    9: "Cada pequena vitória conta.",
+                    10: "A dedicação vale a pena.",
+                    11: "Não há progresso sem ação.",
+                    12: "Pequenos passos também levam ao sucesso.",
+                    13: "Acredite na sua capacidade.",
+                    14: "Persistência supera obstáculos.",
+                    15: "Cada decisão conta.",
+                    16: "O importante é não desistir.",
+                    17: "Motivação leva à ação.",
+                    18: "Seja paciente, o progresso é contínuo.",
+                    19: "Invista no seu bem-estar.",
+                    20: "A mudança começa dentro de você.",
+                    21: "Desafie seus limites.",
+                    22: "O esforço é o primeiro passo.",
+                    23: "Valorize seu progresso.",
+                    24: "É tempo de colher o que plantou.",
+                    25: "O autocuidado é essencial.",
+                    26: "O sucesso é construído diariamente.",
+                    27: "Seja constante em suas ações.",
+                    28: "Cada dia é uma nova chance.",
+                    29: "Faça o melhor que puder.",
+                    30: "Lembre-se, você está no caminho certo.",
+                    31: "A jornada vale o esforço."
                 }
             };
 
