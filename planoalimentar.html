@@ -9,7 +9,9 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #7668A6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         h1 {
@@ -25,10 +27,8 @@
         }
 
         .container {
-            
-            margin: 0px;
-            background-color: #7c64a4;
-            height: 500px;
+            flex: 1; /* Garantir que a área de conteúdo ocupe o máximo possível de altura */
+            padding-bottom: 60px; /* Deixar espaço para o footer */
         }
 
         .navbar {
@@ -41,53 +41,57 @@
         }
 
         header {
-    background-image: url(imagens/frutasroxas.jpg);
-    height: 90px;
-    background-size: cover;
-    background-position: center;
-    margin: 0;
-    padding: 20px 0 0 0; /* Ajuste o padding superior para aumentar o espaço */
-}
+            background-image: url(imagens/fotosroxas.png);
+            height: 90px;
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 20px 0 0 0;
+        }
 
-
-        .alinhar { 
+        .alinhar {
             display: flex;
             align-items: center;
         }
 
-        .navbar a { 
-            margin: 0 0.5rem; 
-            text-decoration: none; 
-            color: #333; 
+        .navbar a {
+            margin: 0 0.5rem;
+            text-decoration: none;
+            color: #333;
             font-weight: 500;
-            transition: color 0.3s; 
+            transition: color 0.3s;
         }
 
-        .navbar a:hover { 
-            color: #00796b; 
+        .navbar a:hover {
+            color: #00796b;
         }
 
         .calendar-container {
             margin: 0 auto;
-            width: 90%; 
-            max-width: 800px; 
-            background-color: #fff; 
+            width: 90%;
+            max-width: 800px;
+            background-color: #fff;
             padding: 10px;
-            border-radius: 10px; 
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         .meal {
-            background-color: rgba(255, 255, 255, 0.658);
+            background-color: white;
             border-radius: 8px;
+            border: 0.5px solid #2c1e42;
             margin: 0 auto;
             margin-bottom: 10px;
-            width: 1000px;
+            margin-top: 10px;
+            width: 1050px;
             padding: 15px;
             display: flex;
             align-items: center;
             cursor: pointer;
-            border: 1px solid #2c1e42;
+        }
+
+        .meal:hover {
+            background-color: #691b9a6e;
         }
 
         .meal img {
@@ -136,7 +140,6 @@
             padding: 20px;
             position: relative;
             bottom: 0;
-            margin-top: 20px;
         }
 
         footer h2 {
@@ -194,7 +197,7 @@
                 <a href="calendario.html">Calendário</a>
                 <a href="planoalimentar.html">Plano Alimentar</a>
             </div>
-        </div> 
+        </div>
 
         <header>
             <div class="nome">
