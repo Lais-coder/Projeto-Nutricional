@@ -3,32 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interface</title>
+    <title>Plano Alimentar</title>
     <style>
-        * {
+        body {
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
         }
-        body {
-            background-color: #f5f5f5;
-            color: #333;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
-            margin-top: 0;
-
+        h1{
+            text-align: center;
+            color: #ddd;
         }
-
-        header{
-            background-color: #5c1eb7;
+        .container {
             width: 100%;
-            height: 100%;
-            padding-top: 10px;
-            padding-bottom: 70px;
             margin: auto;
+            background-color: #7c64a4;
+            height: 500px;
+            
         }
         .navbar { width: 100%; 
             display: flex; 
@@ -47,96 +39,50 @@
                 color: #333; font-weight: 500;
                 transition: color 0.3s; } 
             .navbar a:hover { color: #00796b; } 
-        .card {
-            width: 40%;
-            height: 30%;
-            background: linear-gradient(135deg, #8490b7, #4e4063);
-            color: white;
-            border-radius: 15px;
-            padding: 20px;
-            text-align: left;
-            padding-left: 40px;
-            margin-bottom: 20px;
-        }
-        .card h2 {
-            font-size: 18px;
-            margin-bottom: 5px;
-            
-        }
-        .card p {
-            font-size: 14px;
-            color: #dcdcdc;
-        }
-        .unlock-button {
-            display: inline-block;
-            background-color: #ffffff;
-            color: #374e9a;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-weight: bold;
-            text-align: center;
-            margin-top: 10px;
-        }
-
-        .section-title {
-            font-size: 18px;
-            font-weight: bold;
-            color: #333;
+            .calendar-container {
+                margin: 0 auto;
+                width: 90%; 
+                max-width: 800px; 
+                background-color: #fff; 
+                padding: 10px;
+                border-radius: 10px; 
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); }
+        .meal {
+            background-color: rgba(255, 255, 255, 0.658);
+            border-radius: 8px;
             margin: 10px 0;
-        }
-        .item-list {
-            width: 100%;
-        }
-        .item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
             padding: 15px;
-            background-color: #ffffff;
-            border-radius: 10px;
-            margin-bottom: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        .item-icon {
-            width: 24px;
-            height: 24px;
-        }
-        .nav-bar {
             display: flex;
-            justify-content: space-around;
             align-items: center;
-            width: 100%;
-            background-color: #ffffff;
-            padding: 10px 0;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            border: 1px solid #2c1e42;
         }
-        .nav-bar img {
+        .meal img {
             width: 24px;
             height: 24px;
+            margin-right: 10px;
         }
-        .badge {
-            background-color: red;
-            color: white;
-            font-size: 12px;
-            border-radius: 50%;
-            padding: 2px 6px;
-            position: absolute;
-            top: 10px;
-            right: 10px;
+        .meal h3 {
+            font-size: 18px;
+            margin: 0;
         }
-
-        main{
-            background-color: aliceblue;
-            width: 100%;
+        .meal-plan {
+            display: none;
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+        }
+        .meal-plan p {
+            margin: 0;
+            padding: 5px 0;
         }
     </style>
 </head>
 <body>
-    <!-- Card de Prática Focada -->
- <header>
+
+<div class="container">
     <div class="navbar">
         <div class="alinhar">
             <a href="inicial.html"><img src="imagens/logo.png" alt="Logo" style="height: 40px;  border-radius: 25px; margin-right: 1rem;"></a>
@@ -144,49 +90,80 @@
             <a href="calendario.html">Calendario</a>
             <a href="planoalimentar.html">Plano Alimentar</a>
         </div>
+    </div> 
+    <h1>PLANO ALIMENTAR</h1>
+    <div class="meal" onclick="toggleMealPlan('breakfast')">
+        <img src="imagens/manha.png" alt="icon">
+        <h3>Café da Manhã</h3>
     </div>
-    <div class="card">
-        <h2>Prática focada</h2>
-        <p>Concentre-se nos seus pontos fracos.</p>
-        <div class="unlock-button">DESBLOQUEAR</div>
-    </div>
- </header> 
-
- <main>
-    <!-- Seção Conversação -->
-    <div class="section-title">Refeição<span class="super-badge"></span></div>
-    <div class="item-list">
-        <div class="item">
-            <span>Café da manhã</span>
-            <img src="https://via.placeholder.com/24" alt="Microfone" class="item-icon">
-        </div>
-        <div class="item">
-            <span>Almoço</span>
-            <img src="https://via.placeholder.com/24" alt="Fone de ouvido" class="item-icon">
-        </div>
-    </div>
-    <div class="item-list">
-        <div class="item">
-            <span>Lanche</span>
-            <img src="https://via.placeholder.com/24" alt="Erros" class="item-icon">
-        </div>
-        <div class="item" style="position: relative;">
-            <span>Jantar</span>
-            <span class="badge">30+</span>
-            <img src="https://via.placeholder.com/24" alt="Palavras" class="item-icon">
-        </div>
+    <div id="breakfast" class="meal-plan">
+        <p>Leite de vaca desnatado UHT - 1 Copo americano duplo (240ml)</p>
+        <p>Banana - 1 Unidade média (40g)</p>
+        <p>Maçã - 1 Unidade média (130g)</p>
+        <p>Morango - 10 Unidades médias (120g)</p>
+        <p>Semente de linhaça - 3 Colheres de sopa cheias (45g)</p>
+        <p>Whey protein concentrado - 1 Medidor (30g)</p>
     </div>
 
-    <!-- Barra de Navegação Inferior -->
-    <div class="nav-bar">
-        <img src="https://via.placeholder.com/24" alt="Início">
-        <img src="https://via.placeholder.com/24" alt="Exercício">
-        <img src="https://via.placeholder.com/24" alt="Troféu">
-        <img src="https://via.placeholder.com/24" alt="Perfil">
-        <img src="https://via.placeholder.com/24" alt="Missões">
-        <img src="https://via.placeholder.com/24" alt="Notificações">
+    <div class="meal" onclick="toggleMealPlan('lunch')">
+        <img src="imagens/almoço.png" alt="icon">
+        <h3>Almoço</h3>
     </div>
- </main>
-    
+    <div id="lunch" class="meal-plan">
+        <p>Brócolis cozido - 2 Colheres de servir (54g)</p>
+        <p>Sobrecoxa de frango assada - 2 Unidades pequenas (100g)</p>
+        <p>Arroz branco cozido - 4 Colheres de arroz cheias (180g)</p>
+        <p>Feijão preto cozido - 1 Concha cheia (140g)</p>
+        <p>Tangerina Ponkã - 1 Unidade média (135g)</p>
+    </div>
+
+    <div class="meal" onclick="toggleMealPlan('snack')">
+        <img src="imagens/tarde.jpg" alt="icon">
+        <h3>Merenda</h3>
+    </div>
+    <div id="snack" class="meal-plan">
+        <p>Torrada integral - 3 Unidades (30g)</p>
+        <p>Creme de ricota light - 2 Colheres de sopa (40g)</p>
+    </div>
+
+    <div class="meal" onclick="toggleMealPlan('dinner')">
+        <img src="imagens/jantar.png" alt="icon">
+        <h3>Jantar</h3>
+    </div>
+    <div id="dinner" class="meal-plan">
+        <p>Alface - 2 Folhas médias (20g)</p>
+        <p>Rúcula - 1 Pegador (8g)</p>
+        <p>Tomate cereja - 5 Unidades (50g)</p>
+        <p>Beterraba cozida - 1 Colher de arroz cheia (38g)</p>
+        <p>Atum assado/grelhado - 1 Filé médio (100g)</p>
+        <p>Inhame cozido - 3 Colheres de servir cheias (186g)</p>
+        <p>Grão de bico cozido - 2 Colheres de servir cheias (110g)</p>
+    </div>
+
+    <div class="meal" onclick="toggleMealPlan('supper')">
+        <img src="imagens/ceia.png" alt="icon">
+        <h3>Ceia</h3>
+    </div>
+    <div id="supper" class="meal-plan">
+        <p>Abacate - 0.5 Unidade pequena (185g)</p>
+    </div>
+</div>
+
+<script>
+    function toggleMealPlan(mealId) {
+        const selectedMeal = document.getElementById(mealId);
+        if (selectedMeal.style.display === 'block') {
+            selectedMeal.style.display = 'none';
+        } else {
+            // Hide all meal plans
+            const mealPlans = document.querySelectorAll('.meal-plan');
+            mealPlans.forEach(plan => plan.style.display = 'none');
+
+            // Show the selected meal plan
+            selectedMeal.style.display = 'block';
+        }
+    }
+</script>
+
 </body>
 </html>
