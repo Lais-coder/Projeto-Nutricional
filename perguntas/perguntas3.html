@@ -65,6 +65,37 @@
             transform: translateY(-5px);
         }
 
+        /* Fundo interativo com frutas e vegetais */
+        .background {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .background img {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            opacity: 0.3;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) translateX(0);
+            }
+            50% {
+                transform: translateY(-20px) translateX(20px);
+            }
+            100% {
+                transform: translateY(0) translateX(0);
+            }
+        }
+
         .quiz-container {
             background: #fff;
             border-radius: 10px;
@@ -160,7 +191,7 @@
 <body>
     <div class="container">
         <header>
-            <a href="perguntas.html"><button class="back-btn">&larr;</button></a>
+            <a href="perguntas2.htmla"><button class="back-btn">&larr;</button></a>
             <div class="progress-bar" style="width: 70%;"></div>
         </header> 
     <div class="quiz-container" id="quiz-container">
@@ -168,15 +199,15 @@
 
         <form id="quizForm">
             <div class="question">
-                <p>Você tem algum problema de saúde?</p>
+                <p>Você tem dificuldade em beber água?</p>
                 <div class="options">
                     <input type="radio" name="question1" value="A" id="q1a">
                     <label for="q1a">Sim</label>
                     <input type="radio" name="question1" value="B" id="q1b">
                     <label for="q1b">Não</label>
                 </div>
-            </div>
-            <a href="perguntas3.html"><button type="button" class="submit-button" onclick="submitQuiz()">Próximo</button></a>
+            <a href="perguntas4.html"><button type="button" class="submit-button" onclick="submitQuiz()">Próximo</button></a>
+           
         </form>
 
         <div id="result" class="result"></div>
@@ -196,26 +227,24 @@
                 const form = document.getElementById("quizForm");
                 const answers = {
                     question1: "B",
-                    question2: "B",  // você precisará ajustar as questões conforme elas avançam
+                    question2: "B",
                 };
 
                 let score = 0;
-                let totalQuestions = 2; // o total de questões está como 2 aqui
+                let totalQuestions = 2;
 
                 for (let i = 1; i <= totalQuestions; i++) {
-                    // Corrigindo a interpolação de strings com crase
-                    const selectedAnswer = form.querySelector(`input[name="question${i}"]:checked`);
-                    if (selectedAnswer && selectedAnswer.value === answers[`question${i}`]) {
+                    const selectedAnswer = form.querySelector(input[name="question${i}"]:checked);
+                    if (selectedAnswer && selectedAnswer.value === answers[question${i}])
                         score++;
                     }
-                }
+                
 
-                resultContainer.innerHTML = `Você acertou ${score} de ${totalQuestions} questões.`;
+               { resultContainer.innerHTML = Você acertou ${score} de ${totalQuestions} questões.;
                 resultContainer.classList.add(score === totalQuestions ? 'correct' : 'incorrect');
                 loadingContainer.style.display = "none";
                 quizContainer.classList.remove("hidden");
-            }, 1000); // Simulando o tempo de carregamento
-        }
+               }
     </script>
 
 </body>

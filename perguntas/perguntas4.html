@@ -65,6 +65,37 @@
             transform: translateY(-5px);
         }
 
+        /* Fundo interativo com frutas e vegetais */
+        .background {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .background img {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            opacity: 0.3;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) translateX(0);
+            }
+            50% {
+                transform: translateY(-20px) translateX(20px);
+            }
+            100% {
+                transform: translateY(0) translateX(0);
+            }
+        }
+
         .quiz-container {
             background: #fff;
             border-radius: 10px;
@@ -174,11 +205,12 @@
                     <label for="q1a">Jovem (15-19)</label>
                     <input type="radio" name="question1" value="B" id="q1b">
                     <label for="q1b">Adulto(20-59)</label>
-                    <input type="radio" name="question1" value="C" id="q1c">
-                    <label for="q1c">Idoso(60 em diante)</label>
+                    <input type="radio" name="question1" value="B" id="q1b">
+                    <label for="q1b">Idoso(60 em diante)</label>
+
                 </div>
-            </div>
-            <button type="button" class="submit-button" onclick="submitQuiz()">Próximo</button>
+            <a href="perguntas3.html"><button type="button" class="submit-button" onclick="submitQuiz()">Próximo</button></a>
+           
         </form>
 
         <div id="result" class="result"></div>
@@ -198,29 +230,24 @@
                 const form = document.getElementById("quizForm");
                 const answers = {
                     question1: "B",
+                    question2: "B",
                 };
 
                 let score = 0;
-                let totalQuestions = 1; // Considerando apenas uma questão por enquanto
+                let totalQuestions = 2;
 
-                // Verificando a resposta
-                const selectedAnswer = form.querySelector('input[name="question1"]:checked');
-                if (selectedAnswer && selectedAnswer.value === answers.question1) {
-                    score++;
-                }
+                for (let i = 1; i <= totalQuestions; i++) {
+                    const selectedAnswer = form.querySelector(input[name="question${i}"]:checked);
+                    if (selectedAnswer && selectedAnswer.value === answers[question${i}])
+                        score++;
+                    }
+                
 
-                // Exibindo o resultado
-                resultContainer.innerHTML = `Você acertou ${score} de ${totalQuestions} questões.`;
+               { resultContainer.innerHTML = Você acertou ${score} de ${totalQuestions} questões.;
                 resultContainer.classList.add(score === totalQuestions ? 'correct' : 'incorrect');
                 loadingContainer.style.display = "none";
                 quizContainer.classList.remove("hidden");
-
-                // Redirecionando após o quiz
-                if (score === totalQuestions) {
-                    window.location.href = "perguntas3.html"; // A próxima página do quiz
-                }
-            }, 1000); // Simulando o tempo de carregamento
-        }
+               }
     </script>
 
 </body>

@@ -142,6 +142,7 @@
             background: #e0e0e0;
         }
 
+
         .submit-button {
             width: 100%;
             padding: 20px;
@@ -205,8 +206,8 @@
                     <input type="radio" name="question1" value="B" id="q1b">
                     <label for="q1b">Não</label>
                 </div>
-            </div>
             <a href="perguntas2.html"><button type="button" class="submit-button" onclick="submitQuiz()">Próximo</button></a>
+           
         </form>
 
         <div id="result" class="result"></div>
@@ -233,20 +234,17 @@
                 let totalQuestions = 2;
 
                 for (let i = 1; i <= totalQuestions; i++) {
-                    // Corrigindo a interpolação de string
-                    const selectedAnswer = form.querySelector(`input[name="question${i}"]:checked`);
-                    if (selectedAnswer && selectedAnswer.value === answers[`question${i}`]) {
+                    const selectedAnswer = form.querySelector(input[name="question${i}"]:checked);
+                    if (selectedAnswer && selectedAnswer.value === answers[question${i}])
                         score++;
                     }
-                }
-
-                // Corrigindo a forma de exibir o resultado
-                resultContainer.innerHTML = `Você acertou ${score} de ${totalQuestions} questões.`;
+            
+               { resultContainer.innerHTML = Você acertou ${score} de ${totalQuestions} questões.;
                 resultContainer.classList.add(score === totalQuestions ? 'correct' : 'incorrect');
                 loadingContainer.style.display = "none";
                 quizContainer.classList.remove("hidden");
-            }, 1000); // Simulando o tempo de carregamento
-        }
+               }
     </script>
+
 </body>
 </html>
