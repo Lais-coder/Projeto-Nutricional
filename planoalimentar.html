@@ -9,33 +9,45 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #7c64a4;;
         }
-        h1{
+        h1 {
             text-align: center;
             color: #ddd;
+            text-shadow: 5px 5px 10px rgb(132, 0, 255);
             font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-            border-radius: 20px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.356);
+            margin: 0;
+            padding: 20px 0;
         }
+        .nome {
+            width: 600px;
+            margin: 0 auto;
+        }
+
         .container {
             width: 100%;
-            margin: auto;
-            background-color: #7c64a4;
-            height: 500px;
+            margin: 0;
+            
         }
-        .navbar { 
-            width: 100%; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            padding: 0.5rem 1rem; 
-            background-color: rgba(255, 255, 255, 0.8); 
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            background-color: rgba(255, 255, 255, 0.8);
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            position: relative; 
-            z-index: 1; 
-        } 
-        .alinhar{ 
+        }
+
+        header {
+            background-image: url(imagens/frutasroxas.jpg);
+            height: 90px;
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .alinhar { 
             display: flex;
             align-items: center; 
         } 
@@ -61,7 +73,8 @@
         .meal {
             background-color: rgba(255, 255, 255, 0.658);
             border-radius: 8px;
-            margin: 10px 0;
+            margin: 10px auto;
+            width: 1000px;
             padding: 15px;
             display: flex;
             align-items: center;
@@ -113,7 +126,12 @@
             <a href="planoalimentar.html">Plano Alimentar</a>
         </div>
     </div> 
-    <h1>PLANO ALIMENTAR</h1>
+    
+    <header>
+        <div class="nome">
+            <h1>PLANO ALIMENTAR</h1>
+        </div>
+    </header>
 
     <div class="meal" onclick="toggleMealPlan('breakfast')">
         <img src="imagens/manha.png" alt="icon">
@@ -262,6 +280,9 @@
                 <td>0.5 Unidade pequena (185g)</td>
             </tr>
         </table>
+        <footer>
+            
+        </footer>
     </div>
 </div>
 
