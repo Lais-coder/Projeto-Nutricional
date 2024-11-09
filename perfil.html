@@ -1,262 +1,253 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfil de Usuário</title>
+    <title>Perfil Duolingo</title>
     <style>
-        * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+        /* Remover a barra de rolagem */
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden; /* Desativa a rolagem */
+            font-family: 'Arial', sans-serif;
+            background-color: #f7faff;
+            color: #333;
+        }
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    display: flex;
-    flex-direction: column; /* Coloca os elementos em coluna */
-    justify-content: flex-start;
-    align-items: center;
-    min-height: 100vh;
-    width: 100%;
-    height: 100px;
-   
-}
-
-/* Estilo do Header com links */
-.navbar { width: 100%; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            padding: 0.5rem 1rem; 
-            background-color: rgba(255, 255, 255, 0.8); 
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            background-color: rgba(255, 255, 255, 0.9);
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-             position: relative; z-index: 1; } 
-             
-             .alinhar{ 
-                display: flex;
-                align-items: center; } 
-            .navbar a { margin: 0 0.5rem; 
-                text-decoration: none; 
-                color: #333; font-weight: 500;
-                transition: color 0.3s; } 
-            .navbar a:hover { color: #00796b; } 
-            .calendar-container {
-                margin: 0 auto;
-                width: 90%; 
-                max-width: 800px; 
-                background-color: #fff; 
-                padding: 10px;
-                border-radius: 10px; 
-                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); }
-                          
+        }
 
-/* Container do perfil */
-.container {
-    width: 100%;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    
-}
+        .navbar a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            margin: 0 1rem;
+            transition: color 0.3s ease-in-out;
+        }
 
-/* Cabeçalho do Perfil */
-.profile-header {
-    margin-bottom: 30px;
-    background-color: #e0f7ef;
-    padding: 20px;
-    border-radius: 10px;
-    width: 100%;
-    text-align: center;
-}
+        .navbar a:hover {
+            color: #00796b;
+        }
 
-/* Estilos do Avatar */
-.avatar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto 15px;
-}
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            overflow: hidden; /* Evita que o conteúdo ultrapasse os limites */
+        }
 
-.avatar img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-}
+        .profile {
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
 
-/* Informações do Perfil */
-.profile-info h2 {
-    font-size: 24px;
-    margin-bottom: 5px;
-}
+        .profile-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
 
-.username {
-    color: #777;
-    font-size: 16px;
-}
+        .profile-photo {
+            width: 100px;
+            height: 100px;
+            background-color: #e0e8f0;
+            border-radius: 50%;
+            margin-right: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            color: #999;
+            font-weight: bold;
+        }
 
-/* Informações de Seguindo e Seguidores */
-.follow-info {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 15px;
-    color: #007bff;
-    font-weight: bold;
-    text-decoration: underline;
-}
+        .profile-info h1 {
+            margin: 0;
+            font-size: 28px;
+            color: #333;
+        }
 
-/* Botão Adicionar Amigos */
-.add-friend {
-    background-color: #7c64a4;
-    color: #fff;
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.215);
-    border: none;
-    padding: 10px 20px;
-    border-radius: 20px;
-    margin-top: 15px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-}
+        .profile-info p {
+            margin: 5px 0;
+            color: #555;
+            font-size: 16px;
+        }
 
-.add-friend:hover {
-    background-color: #473366;
-}
+        .profile-info a {
+            color: #00796b;
+            text-decoration: none;
+            font-weight: bold;
+        }
 
-/* Estatísticas */
-.statistics {
-    margin-top: 30px;
-    text-align: left;
-    width: 100%;
-}
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            margin-top: 10px;
+        }
 
-.statistics h3 {
-    margin-left: 10px;
-    font-size: 20px;
-    margin-bottom: 15px;
-}
+        .stat-box {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 5px;
+            text-align: center;
+            transition: background-color 0.3s ease-in-out;
+        }
 
-.stat-item {
-    display: flex;
-    justify-content: space-between;
-    padding: 12px;
-    background-color: #ececec;
-    border-radius: 20px;
-    margin-bottom: 12px;
-    font-size: 16px;
-}
+        .stat-box:hover {
+            background-color: #f0f8f7;
+        }
 
-.stat-item p {
-    margin-left: 30px;
-    margin-right: 30px;
-}
+        .stat-box h3 {
+            margin: 0;
+            font-size: 32px;
+            color: #333;
+        }
 
-.badge {
-    background-color: #d9534f;
-    color: #fff;
-    padding: 3px 8px;
-    border-radius: 5px;
-    font-size: 14px;
-    margin-left: 5px;
-}
+        .stat-box p {
+            margin-top: 5px;
+            color: #888;
+        }
 
-/* Responsividade para telas menores */
-@media (max-width: 768px) {
-    body {
-        justify-content: flex-start;
-        padding: 10px;
-    }
+        .achievements {
+            margin-top: 30px;
+        }
 
-    .container {
-        width: 100%;  /* Ajusta a largura para preencher a tela em dispositivos móveis */
-        max-width: 500px; /* Garante que a largura máxima seja de 500px */
-        padding: 20px;
-    }
+        .achievements h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            font-weight: 600;
+            color: #333;
+        }
 
-    .profile-header {
-        text-align: center;
-        padding: 15px;
-    }
+        .meal {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            margin-top: 15px;
+            transition: background-color 0.3s ease;
+        }
 
-    .avatar img {
-        width: 80px;
-        height: 80px;
-    }
+        .meal:hover {
+            background-color: #f0f8f7;
+        }
 
-    .profile-info h2 {
-        font-size: 22px;
-    }
+        .meal img {
+            width: 30px;
+            height: 30px;
+            margin-right: 15px;
+        }
 
-    .follow-info {
-        flex-direction: column;
-        gap: 10px;
-        margin-top: 10px;
-    }
+        .meal h3 {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+        }
 
-    .add-friend {
-        width: 100%;
-        padding: 12px 20px;
-    }
+        .min-meal{
+           margin-left:  820px;
+            text-align: right;
+        }
 
-    .statistics h3 {
-        font-size: 18px;
-    }
-
-    .stat-item {
-        padding: 50px;
-        font-size: 14px;
-    }
-}
+        .min2-meal{
+            margin-left: 980px;
+        }
     </style>
 </head>
 <body>
-    <!-- Header com links de navegação -->
     <div class="navbar">
+        <a href="inicial.html"><img src="imagens/logo.png" alt="Logo" style="height: 40px; border-radius: 25px;"></a>
         <div class="alinhar">
-            <a href="inicial.html"><img src="imagens/logo.png" alt="Logo" style="height: 40px;  border-radius: 25px; margin-right: 1rem;"></a>
             <a href="perfil.html">Meu Perfil</a>
-            <a href="calendario.html">Calendario</a>
+            <a href="calendario.html">Calendário</a>
             <a href="planoalimentar.html">Plano Alimentar</a>
         </div>
     </div>
-    <!-- Container principal com perfil -->
-    <div class="container">
-        <div class="profile-header">
-            <div class="avatar">
-                <img src="imagens/WhatsApp Image 2024-11-06 at 10.36.12.jpeg" alt="Avatar de Maria Madalena">
-            </div>
-            <div class="profile-info">
-                <h2>Maria Madalena</h2>
-                <p class="username">maria123</p>
-                <p>Por aqui desde Janeiro de 2024</p>
-            </div>
-            <div class="follow-info">
-                <p>1<span> Seguindo</span></p>
-                <p><span>3</span> Seguidores</p>
-            </div>
-            <button class="add-friend">Adicionar Amigos</button>
-        </div>
 
-        <div class="statistics">
-            <h3>Descrição</h3>
-            <div class="stat-item">
-                <p>Nome</p>
-                <p>Maria Madalena de Sousa Ramos</p>
+    <div class="container">
+        <div class="profile">
+            <div class="profile-header">
+                <div class="profile-photo">M</div>
+                <div class="profile-info">
+                    <h1>Maria Madalena</h1>
+                    <p>Maria.123</p>
+                    <p>Por aqui desde novembro de 2024</p>
+                    <p><a href="#">Segue 0</a> · <a href="#">Tem 0 seguidores</a></p>
+                </div>
             </div>
-            <div class="stat-item">
-                <p>Idade</p>
-                <p>65</p>
+
+            <div class="stats">
+                <div class="stat-box">
+                    <h3></h3>
+                    <p></p>
+                </div>
+                <div class="stat-box">
+                    <h3></h3>
+                    <p></p>
+                </div>
+                <div class="stat-box">
+                    <h3></h3>
+                    <p></p>
+                </div>
+                <div class="stat-box">
+                    <h3></h3>
+                    <p></p>
+                </div>
             </div>
-            <div class="stat-item">
-                <p>Altura</p>
-                <p>1,54m</p>
-            </div>
-            <div class="stat-item">
-                <p>Peso</p>
-                <p>60kg</p>
+
+            <div class="achievements">
+                <h3>Informações</h3>
+
+                <div class="meal">
+                    <img src="imagens/do-utilizador.png" alt="Nome">
+                    <h3>Nome</h3>
+                    <div class="min-meal"> 
+                        <p>Maria Madalena de Sousa</p>
+                    </div>
+                   
+                </div>
+
+                <div class="meal">
+                    <img src="imagens/idade.png" alt="Idade">
+                    <h3>Idade</h3>
+                    <div class="min2-meal">
+                        <p>70</p>
+                    </div>
+                    
+                </div>
+
+                <div class="meal">
+                    <img src="imagens/escala-de-peso.png" alt="Peso">
+                    <h3>Peso</h3>
+                    <div class="min2-meal">
+                        <p>60kg</p>
+                    </div>
+                   
+                </div>
+
+                <div class="meal">
+                    <img src="imagens/governante.png" alt="Altura">
+                    <h3>Altura</h3>
+                    <div class="min2-meal">
+                        <p>1,60</p>
+                    </div>
+                   
+                </div>
             </div>
         </div>
     </div>

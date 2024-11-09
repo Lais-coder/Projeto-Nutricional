@@ -8,24 +8,31 @@
          body { 
                 font-family: Arial, sans-serif;  background-color: #f4f4f4; margin: 0; padding: 0; }
          
-         .navbar { width: 100%; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            padding: 0.5rem 1rem; 
-            background-color: rgba(255, 255, 255, 0.8); 
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-             position: relative; z-index: 1; } 
              
-             .alinhar{ 
-                display: flex;
-                align-items: center; } 
-            .navbar a { margin: 0 0.5rem; 
-                text-decoration: none; 
-                color: #333; font-weight: 500;
-                transition: color 0.3s; } 
-            .navbar a:hover { color: #00796b; } 
-            .calendar-container {
+   
+    .navbar a:hover {
+         color:#7B67A6;
+         } 
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            margin: 0 1rem;
+            transition: color 0.3s ease-in-out;
+            text-align: right;
+        }
+    
+        .calendar-container {
                 margin: 0 auto;
                 width: 90%; 
                 max-width: 800px; 
@@ -49,7 +56,7 @@
                 text-align: center;
                 padding: 5px;
                 border: 1px solid #ddd; } 
-            .calendar th { background-color: #4CAF50; 
+            .calendar th { background-color:#7B67A6; 
                 color: white; } 
             .calendar td { background-color: #f9f9f9; cursor: pointer; } 
             .calendar td {
@@ -70,10 +77,11 @@
 </head>
 <body>
     <div class="navbar">
+        <a href="inicial.html"><img src="imagens/logo.png" alt="Logo" style="height: 40px;  border-radius: 25px; margin-right: 1rem;"></a>
         <div class="alinhar">
-            <a href="inicial.html"><img src="imagens/logo.png" alt="Logo" style="height: 40px;  border-radius: 25px; margin-right: 1rem;"></a>
+           
             <a href="perfil.html">Meu Perfil</a>
-            <a href="calendario.html">Calendario</a>
+            <a href="calendario.html">Calendário</a>
             <a href="planoalimentar.html">Plano Alimentar</a>
         </div>
     </div>

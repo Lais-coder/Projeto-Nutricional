@@ -31,14 +31,6 @@
             padding-bottom: 60px; /* Deixar espaço para o footer */
         }
 
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0.5rem 1rem;
-            background-color: rgba(255, 255, 255, 0.8);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
 
         header {
             background-image: url(imagens/fotosroxas.png);
@@ -49,41 +41,38 @@
             padding: 20px 0 0 0;
         }
 
-        .alinhar {
+        .navbar {
             display: flex;
+            justify-content: space-between;
             align-items: center;
+            padding: 0.5rem 1rem;
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
         .navbar a {
-            margin: 0 0.5rem;
             text-decoration: none;
             color: #333;
             font-weight: 500;
-            transition: color 0.3s;
+            margin: 0 1rem;
+            transition: color 0.3s ease-in-out;
         }
 
         .navbar a:hover {
             color: #00796b;
         }
 
-        .calendar-container {
-            margin: 0 auto;
-            width: 90%;
-            max-width: 800px;
-            background-color: #fff;
-            padding: 10px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
+
 
         .meal {
             background-color: white;
             border-radius: 8px;
             border: 0.5px solid #2c1e42;
-            margin: 0 auto;
+            margin-left: 8px;
+            margin-right: 8px;
             margin-bottom: 10px;
             margin-top: 10px;
-            width: 1050px;
+            width: 100%px;
             padding: 15px;
             display: flex;
             align-items: center;
@@ -189,15 +178,14 @@
 </head>
 <body>
 
-    <div class="container">
-        <div class="navbar">
-            <div class="alinhar">
-                <a href="inicial.html"><img src="imagens/logo.png" alt="Logo" style="height: 40px; border-radius: 25px; margin-right: 1rem;"></a>
-                <a href="perfil.html">Meu Perfil</a>
-                <a href="calendario.html">Calendário</a>
-                <a href="planoalimentar.html">Plano Alimentar</a>
-            </div>
+  <div class="navbar">
+        <a href="inicial.html"><img src="imagens/logo.png" alt="Logo" style="height: 40px; border-radius: 25px;"></a>
+        <div class="alinhar">
+            <a href="perfil.html">Meu Perfil</a>
+            <a href="calendario.html">Calendário</a>
+            <a href="planoalimentar.html">Plano Alimentar</a>
         </div>
+    </div>
 
         <header>
             <div class="nome">
