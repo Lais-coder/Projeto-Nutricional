@@ -9,26 +9,28 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #7c64a4;;
+            background-color: #7668A6;
         }
+
         h1 {
             text-align: center;
             color: #ddd;
-            text-shadow: 5px 5px 10px rgb(132, 0, 255);
             font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-            margin: 0;
-            padding: 20px 0;
+            border-radius: 20px;
         }
+
         .nome {
             width: 600px;
             margin: 0 auto;
         }
 
         .container {
-            width: 100%;
-            margin: 0;
             
+            margin: 0px;
+            background-color: #7c64a4;
+            height: 500px;
         }
+
         .navbar {
             display: flex;
             justify-content: space-between;
@@ -39,28 +41,32 @@
         }
 
         header {
-            background-image: url(imagens/frutasroxas.jpg);
-            height: 90px;
-            background-size: cover;
-            background-position: center;
-            margin: 0;
-            padding: 0;
-        }
+    background-image: url(imagens/frutasroxas.jpg);
+    height: 90px;
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 20px 0 0 0; /* Ajuste o padding superior para aumentar o espaço */
+}
+
 
         .alinhar { 
             display: flex;
-            align-items: center; 
-        } 
+            align-items: center;
+        }
+
         .navbar a { 
             margin: 0 0.5rem; 
             text-decoration: none; 
             color: #333; 
             font-weight: 500;
             transition: color 0.3s; 
-        } 
+        }
+
         .navbar a:hover { 
             color: #00796b; 
-        } 
+        }
+
         .calendar-container {
             margin: 0 auto;
             width: 90%; 
@@ -70,10 +76,12 @@
             border-radius: 10px; 
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
         }
+
         .meal {
             background-color: rgba(255, 255, 255, 0.658);
             border-radius: 8px;
-            margin: 10px auto;
+            margin: 0 auto;
+            margin-bottom: 10px;
             width: 1000px;
             padding: 15px;
             display: flex;
@@ -81,15 +89,18 @@
             cursor: pointer;
             border: 1px solid #2c1e42;
         }
+
         .meal img {
             width: 24px;
             height: 24px;
             margin-right: 10px;
         }
+
         .meal h3 {
             font-size: 18px;
             margin: 0;
         }
+
         .meal-plan {
             display: none;
             background-color: #fff;
@@ -98,204 +109,269 @@
             margin: 10px 0;
             border: 1px solid #ddd;
         }
+
         .meal-plan p, .meal-plan table {
             margin: 0;
             padding: 5px 0;
         }
+
         .meal-plan table {
             width: 100%;
             border-collapse: collapse;
         }
+
         .meal-plan table, .meal-plan th, .meal-plan td {
             border: 1px solid #ddd;
             padding: 8px;
         }
+
         .meal-plan th {
             background-color: #f4f4f4;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #3333336c;
+            color: white;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            margin-top: 20px;
+        }
+
+        footer h2 {
+            margin-bottom: 10px;
+        }
+
+        /* Estilo da caixa de perguntas */
+        .question-box {
+            margin-top: 20px;
+            background-color: white;
+            width: 300px;
+            height: 40px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            margin: 0 auto;
+            padding: 5px 10px;
+        }
+
+        .question-box input {
+            width: 80%;
+            height: 25px;
+            border: none;
+            outline: none;
+            padding: 0 10px;
+            font-size: 14px;
+            border-radius: 20px;
+        }
+
+        .question-box button {
+            background-color: #4285F4;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 6px 15px;
+            font-size: 14px;
+            margin-left: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .question-box button:hover {
+            background-color: #357ae8;
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <div class="navbar">
-        <div class="alinhar">
-            <a href="inicial.html"><img src="imagens/logo.png" alt="Logo" style="height: 40px; border-radius: 25px; margin-right: 1rem;"></a>
-            <a href="perfil.html">Meu Perfil</a>
-            <a href="calendario.html">Calendario</a>
-            <a href="planoalimentar.html">Plano Alimentar</a>
+    <div class="container">
+        <div class="navbar">
+            <div class="alinhar">
+                <a href="inicial.html"><img src="imagens/logo.png" alt="Logo" style="height: 40px; border-radius: 25px; margin-right: 1rem;"></a>
+                <a href="perfil.html">Meu Perfil</a>
+                <a href="calendario.html">Calendário</a>
+                <a href="planoalimentar.html">Plano Alimentar</a>
+            </div>
+        </div> 
+
+        <header>
+            <div class="nome">
+                <h1>PLANO ALIMENTAR</h1>
+            </div>
+        </header>
+
+        <div class="meal" onclick="toggleMealPlan('breakfast')">
+            <img src="imagens/manha.png" alt="icon">
+            <h3>Café da Manhã</h3>
         </div>
-    </div> 
-    <h1>PLANO ALIMENTAR</h1>
+        <div id="breakfast" class="meal-plan">
+            <table>
+                <tr>
+                    <th>Alimentos</th>
+                    <th>Quantidade</th>
+                </tr>
+                <tr>
+                    <td>Leite de vaca desnatado UHT</td>
+                    <td>1 Copo americano duplo (240ml)</td>
+                </tr>
+                <tr>
+                    <td>Banana</td>
+                    <td>1 Unidade média (40g)</td>
+                </tr>
+                <tr>
+                    <td>Maçã</td>
+                    <td>1 Unidade média (130g)</td>
+                </tr>
+                <tr>
+                    <td>Morango</td>
+                    <td>10 Unidades médias (120g)</td>
+                </tr>
+                <tr>
+                    <td>Semente de linhaça</td>
+                    <td>3 Colheres de sopa cheias (45g)</td>
+                </tr>
+                <tr>
+                    <td>Whey protein concentrado</td>
+                    <td>1 Medidor (30g)</td>
+                </tr>
+            </table>
+        </div>
 
-    <div class="meal" onclick="toggleMealPlan('breakfast')">
-        <img src="imagens/manha.png" alt="icon">
-        <h3>Café da Manhã</h3>
-    </div>
-    <div id="breakfast" class="meal-plan">
-        <table>
-            <tr>
-                <th>Alimentos</th>
-                <th>Quantidade</th>
-            </tr>
-            <tr>
-                <td>Leite de vaca desnatado UHT</td>
-                <td>1 Copo americano duplo (240ml)</td>
-            </tr>
-            <tr>
-                <td>Banana</td>
-                <td>1 Unidade média (40g)</td>
-            </tr>
-            <tr>
-                <td>Maçã</td>
-                <td>1 Unidade média (130g)</td>
-            </tr>
-            <tr>
-                <td>Morango</td>
-                <td>10 Unidades médias (120g)</td>
-            </tr>
-            <tr>
-                <td>Semente de linhaça</td>
-                <td>3 Colheres de sopa cheias (45g)</td>
-            </tr>
-            <tr>
-                <td>Whey protein concentrado</td>
-                <td>1 Medidor (30g)</td>
-            </tr>
-        </table>
+        <div class="meal" onclick="toggleMealPlan('lunch')">
+            <img src="imagens/almoço.png" alt="icon">
+            <h3>Almoço</h3>
+        </div>
+        <div id="lunch" class="meal-plan">
+            <table>
+                <tr>
+                    <th>Alimentos</th>
+                    <th>Quantidade</th>
+                </tr>
+                <tr>
+                    <td>Brócolis cozido</td>
+                    <td>2 Colheres de servir (54g)</td>
+                </tr>
+                <tr>
+                    <td>Sobrecoxa de frango assada</td>
+                    <td>2 Unidades pequenas (100g)</td>
+                </tr>
+                <tr>
+                    <td>Arroz branco cozido</td>
+                    <td>4 Colheres de arroz cheias (180g)</td>
+                </tr>
+                <tr>
+                    <td>Feijão preto cozido</td>
+                    <td>1 Concha cheia (140g)</td>
+                </tr>
+                <tr>
+                    <td>Tangerina Ponkã</td>
+                    <td>1 Unidade média (135g)</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="meal" onclick="toggleMealPlan('snack')">
+            <img src="imagens/tarde.jpg" alt="icon">
+            <h3>Merenda</h3>
+        </div>
+        <div id="snack" class="meal-plan">
+            <table>
+                <tr>
+                    <th>Alimentos</th>
+                    <th>Quantidade</th>
+                </tr>
+                <tr>
+                    <td>Torrada integral</td>
+                    <td>3 Unidades (30g)</td>
+                </tr>
+                <tr>
+                    <td>Creme de ricota light</td>
+                    <td>2 Colheres de sopa (40g)</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="meal" onclick="toggleMealPlan('dinner')">
+            <img src="imagens/jantar.png" alt="icon">
+            <h3>Jantar</h3>
+        </div>
+        <div id="dinner" class="meal-plan">
+            <table>
+                <tr>
+                    <th>Alimentos</th>
+                    <th>Quantidade</th>
+                </tr>
+                <tr>
+                    <td>Alface</td>
+                    <td>2 Folhas médias (20g)</td>
+                </tr>
+                <tr>
+                    <td>Rúcula</td>
+                    <td>1 Pegador (8g)</td>
+                </tr>
+                <tr>
+                    <td>Tomate cereja</td>
+                    <td>5 Unidades (50g)</td>
+                </tr>
+                <tr>
+                    <td>Beterraba cozida</td>
+                    <td>1 Colher de arroz cheia (38g)</td>
+                </tr>
+                <tr>
+                    <td>Atum assado/grelhado</td>
+                    <td>1 Filé médio (100g)</td>
+                </tr>
+                <tr>
+                    <td>Inhame cozido</td>
+                    <td>3 Colheres de servir cheias (186g)</td>
+                </tr>
+                <tr>
+                    <td>Grão de bico cozido</td>
+                    <td>2 Colheres de servir cheias (110g)</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="meal" onclick="toggleMealPlan('supper')">
+            <img src="imagens/ceia.png" alt="icon">
+            <h3>Ceia</h3>
+        </div>
+        <div id="supper" class="meal-plan">
+            <table>
+                <tr>
+                    <th>Alimentos</th>
+                    <th>Quantidade</th>
+                </tr>
+                <tr>
+                    <td>Abacate</td>
+                    <td>0.5 Unidade pequena (185g)</td>
+                </tr>
+            </table>
+        </div>
     </div>
 
-    <div class="meal" onclick="toggleMealPlan('lunch')">
-        <img src="imagens/almoço.png" alt="icon">
-        <h3>Almoço</h3>
-    </div>
-    <div id="lunch" class="meal-plan">
-        <table>
-            <tr>
-                <th>Alimentos</th>
-                <th>Quantidade</th>
-            </tr>
-            <tr>
-                <td>Brócolis cozido</td>
-                <td>2 Colheres de servir (54g)</td>
-            </tr>
-            <tr>
-                <td>Sobrecoxa de frango assada</td>
-                <td>2 Unidades pequenas (100g)</td>
-            </tr>
-            <tr>
-                <td>Arroz branco cozido</td>
-                <td>4 Colheres de arroz cheias (180g)</td>
-            </tr>
-            <tr>
-                <td>Feijão preto cozido</td>
-                <td>1 Concha cheia (140g)</td>
-            </tr>
-            <tr>
-                <td>Tangerina Ponkã</td>
-                <td>1 Unidade média (135g)</td>
-            </tr>
-        </table>
-    </div>
+    <footer>
+        <h2>Ficou com alguma dúvida?</h2>
+        <div class="question-box">
+            <input type="text" id="question" placeholder="Digite sua dúvida...">
+            <button onclick="submitQuestion()">Enviar</button>
+        </div>
+    </footer>
 
-    <div class="meal" onclick="toggleMealPlan('snack')">
-        <img src="imagens/tarde.jpg" alt="icon">
-        <h3>Merenda</h3>
-    </div>
-    <div id="snack" class="meal-plan">
-        <table>
-            <tr>
-                <th>Alimentos</th>
-                <th>Quantidade</th>
-            </tr>
-            <tr>
-                <td>Torrada integral</td>
-                <td>3 Unidades (30g)</td>
-            </tr>
-            <tr>
-                <td>Creme de ricota light</td>
-                <td>2 Colheres de sopa (40g)</td>
-            </tr>
-        </table>
-    </div>
-
-    <div class="meal" onclick="toggleMealPlan('dinner')">
-        <img src="imagens/jantar.png" alt="icon">
-        <h3>Jantar</h3>
-    </div>
-    <div id="dinner" class="meal-plan">
-        <table>
-            <tr>
-                <th>Alimentos</th>
-                <th>Quantidade</th>
-            </tr>
-            <tr>
-                <td>Alface</td>
-                <td>2 Folhas médias (20g)</td>
-            </tr>
-            <tr>
-                <td>Rúcula</td>
-                <td>1 Pegador (8g)</td>
-            </tr>
-            <tr>
-                <td>Tomate cereja</td>
-                <td>5 Unidades (50g)</td>
-            </tr>
-            <tr>
-                <td>Beterraba cozida</td>
-                <td>1 Colher de arroz cheia (38g)</td>
-            </tr>
-            <tr>
-                <td>Atum assado/grelhado</td>
-                <td>1 Filé médio (100g)</td>
-            </tr>
-            <tr>
-                <td>Inhame cozido</td>
-                <td>3 Colheres de servir cheias (186g)</td>
-            </tr>
-            <tr>
-                <td>Grão de bico cozido</td>
-                <td>2 Colheres de servir cheias (110g)</td>
-            </tr>
-        </table>
-    </div>
-
-    <div class="meal" onclick="toggleMealPlan('supper')">
-        <img src="imagens/ceia.png" alt="icon">
-        <h3>Ceia</h3>
-    </div>
-    <div id="supper" class="meal-plan">
-        <table>
-            <tr>
-                <th>Alimentos</th>
-                <th>Quantidade</th>
-            </tr>
-            <tr>
-                <td>Abacate</td>
-                <td>0.5 Unidade pequena (185g)</td>
-            </tr>
-        </table>
-        <footer>
-            
-        </footer>
-    </div>
-</div>
-
-<script>
-    function toggleMealPlan(mealId) {
-        const selectedMeal = document.getElementById(mealId);
-        if (selectedMeal.style.display === 'block') {
-            selectedMeal.style.display = 'none';
-        } else {
-            // Hide all meal plans
-            const mealPlans = document.querySelectorAll('.meal-plan');
-            mealPlans.forEach(plan => plan.style.display = 'none');
-
-            // Show the selected meal plan
-            selectedMeal.style.display = 'block';
+    <script>
+        function toggleMealPlan(mealId) {
+            const selectedMeal = document.getElementById(mealId);
+            if (selectedMeal.style.display === 'block') {
+                selectedMeal.style.display = 'none';
+            } else {
+                const mealPlans = document.querySelectorAll('.meal-plan');
+                mealPlans.forEach(plan => plan.style.display = 'none');
+                selectedMeal.style.display = 'block';
+            }
         }
-    }
-</script>
+    </script>
 
 </body>
 </html>
