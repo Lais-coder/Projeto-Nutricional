@@ -11,7 +11,35 @@
             margin: 0;
             padding: 0;
         }
+        header {
+            display: flex;
+            align-items: center;
+            padding: 12px 20px;
+            background-color: #f0f0f0;
+            border-bottom: 1px solid #ddd;
+        }
 
+        .back-btn {
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: #333;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .back-btn:hover {
+            color: #7c64a4;
+        }
+
+        .progress-bar {
+            flex: 1;
+            height: 5px;
+            background-color: #7c64a4;
+            margin-left: 15px;
+            border-radius: 10px;
+            transition: width 0.5s ease;
+        }
         body {
             font-family: 'Poppins', sans-serif;
             background-color: #f7f7f7;
@@ -148,10 +176,12 @@
     </style>
 </head>
 <body>
-
     <div class="quiz-container" id="quiz-container">
+        <header>
+            <a href="perguntas.html"><button class="back-btn">&larr;</button></a>
+            <div class="progress-bar" style="width: 70%;"></div>
+        </header> 
         <h1>Questionário</h1>
-
         <form id="quizForm">
             <div class="question">
                 <p>Você tem algum problema de saúde?</p>
@@ -164,7 +194,6 @@
 
                 <a href="perguntas3.html"><button type="button" class="submit-button" onclick="submitQuiz()">Próximo</button></a>
         </form>
-
         <div id="result" class="result"></div>
         <div id="loading" class="loading">Carregando resultado...</div>
     </div>
