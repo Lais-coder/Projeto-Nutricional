@@ -55,13 +55,6 @@
             color: #00796b;
         }
 
-         /* Estilo para o comentário acima da palavra */
-         
-
-        .button:hover {
-            background-color: #005f56;
-        }
-
         .container {
             margin-left: 10%;
             margin-top: 5%;
@@ -137,7 +130,6 @@
         /* Seções */
         .section {
             padding: 40px;
-            margin-top: 300px;
             margin-bottom: 0;
             text-align: center;
             width: 100%;
@@ -202,6 +194,74 @@
             font-size: 1em;
         }
 
+        /* Seção Premium */
+.premium {
+    background-color: #f4f4f4;
+    padding: 40px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;  /* Garante que o conteúdo seja distribuído e o botão vá para o fundo */
+    height: 100%;  /* Faz a seção ocupar toda a altura disponível */
+}
+
+.premium h2 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.premium .premium-content {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+    flex-grow: 1;  /* Faz a área de conteúdo crescer e empurrar o botão para baixo */
+}
+
+.premium .premium-card {
+    background-color: #fff;
+    padding: 20px;
+    width: 300px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.premium .premium-card img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+.premium .premium-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.premium .premium-card p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+.premium .entrar {
+    background-color: #7f55ff63;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 30px; /* Adiciona um espaço superior */
+}
+
+.premium .entrar:hover {
+    background-color: #56208c;
+}
+
+
         /* Footer */
         footer {
             text-align: center;
@@ -210,7 +270,6 @@
             padding: 20px;
             padding-top: 20px;
             width: 100%;
-
         }
 
         footer p {
@@ -224,139 +283,15 @@
         .destaque2{
             color: #7668A6;
         }
-
-        .comment {
-            position: relative;
-            display: inline-block;
-            cursor: pointer;
-        }
-
-        .comment::after {
-            content: "(11) 91234-5678";
-            position: absolute;
-            top: -25px;
-            left: 0;
-            background-color: #fff;
-            border: 1px solid #101010;
-            padding: 5px;
-            font-size: 12px;
-            color: #333;
-            white-space: nowrap;
-            visibility: hidden;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .comment:hover::after {
-            visibility: visible;
-            opacity: 1;
-        }
-
-        .comment1 {
-            position: relative;
-            display: inline-block;
-            cursor: pointer;
-        }
-
-        .comment1::after {
-            content: "myf'sp.gmail.com.br";
-            position: absolute;
-            top: -25px;
-            left: 0;
-            background-color: #fff;
-            border: 1px solid #101010;
-            padding: 5px;
-            font-size: 12px;
-            color: #333;
-            white-space: nowrap;
-            visibility: hidden;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .comment1:hover::after {
-            visibility: visible;
-            opacity: 1;
-        }
-        /* Media query para dispositivos móveis com largura máxima de 600px */
-@media (max-width: 600px) {
-    body{
-        background: url(imagens/paracelular.jpg) no-repeat bottom center fixed;
-    }
-    /* Ajusta a navegação */
-    .navbar {
-        flex-direction: column;
-        padding: 1rem;
-    }
-
-    /* Ajusta o container principal */
-    .container {
-        margin: 5% 5%;
-        padding: 1rem;
-        text-align: center;
-    }
-
-    .container h1 {
-        font-size: 1.8rem;
-    }
-
-    .container p {
-        font-size: 1rem;
-    }
-
-    /* Ajusta os botões */
-    .entrar, .criar {
-        font-size: 1rem;
-        padding: 0.8rem;
-        width: 100%;
-        margin-top: 1rem;
-    }
-
-    /* Ajusta as seções de benefícios */
-    .benefits .cards {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .benefits .card {
-        width: 90%;
-        margin: 0 auto;
-    }
-
-    .benefits .card img {
-        width: 50px;
-        height: 50px;
-    }
-
-    .section h2 {
-        font-size: 2rem;
-    }
-
-    footer {
-        padding: 10px;
-    }
-
-    footer h2 {
-        font-size: 1.5rem;
-    }
-    
-    footer p {
-        font-size: 1rem;
-    }
-}
-
-
     </style>
 </head>
 <body>
-
-
 
     <div class="navbar">
         <img src="imagens/logo.png" alt="Logo" style="height: 40px; border-radius: 25px; margin-right: 1rem;">
         <div class="alinhar">
             <a href="#"><span class="comment1">Email</span></a>
-           <a href="#"><span class="comment">Contato</span></a>
+            <a href="#"><span class="comment">Contato</span></a>
         </div>
     </div>
 
@@ -367,7 +302,6 @@
         <a href="criar.html"><button class="criar">Comece agora</button></a>
         <a href="login.html"><button class="entrar">Já tenho uma conta</button></a>
     </div>
-
     <section class="section benefits">
         <h2><span class="destaque2">Benefícios</span> do nosso <span class="destaque2">Plano</span> Alimentar</h2>
         <div class="cards">
@@ -382,15 +316,25 @@
                 <p>Perda de peso saudável sem dietas restritivas.</p>
             </div>
             <div class="card">
-                    <img src="imagens/coração.png" alt="Vida">
+                <img src="imagens/coração.png" alt="Vida">
                 <h3>Expectativa de <span class="destaque">Vida</span></h3>
                 <p>Uma boa alimentação contribui para sua saúde mental e física.</p>
             </div>
         </div>
     </section>
+    <section class="section premium">
+        <h2><span class="destaque">Plano Premium</span> para uma experiência ainda mais completa</h2>
+        <div class="premium-content">
+            <div class="premium-card">
+                <h3>Consultoria <span class="destaque">Exclusiva</span></h3>
+                <p>Acesso a nutricionistas especializados para acompanhamento contínuo.</p>
+            </div>
+        <a href="premium.html"><button class="entrar">Assine o Plano Premium</button></a>
+    </section>
     <footer>
         <h2>Pronto para Começar?</h2>
         <p>Receba seu plano alimentar exclusivo em minutos.</p>
-                  
     </footer>
-       
+
+</body>
+</html>
