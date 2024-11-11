@@ -180,7 +180,7 @@
         }
 
         .criar {
-            background-color:#40804bd7;
+            background-color:#625186;
             color: #f9f6f6;
             border-radius: 8px;
             padding: 8px 8px;
@@ -193,6 +193,13 @@
 
         .destaque{
             color: #625186;
+        }
+
+   /* Estilo para a classe concluído */
+        .concluido {
+    background-color:#40804bd7;/* Cor verde */
+    color: white !important; /* Texto branco */
+    border: 1px solid #346a3dd7; /* Cor de borda verde mais escura */
         }
     </style>
 </head>
@@ -248,7 +255,7 @@
                     <td>1 Medidor (30g)</td>
                 </tr>
             </table>
-            <a href="criar.html"><button class="criar">Concluído</button></a>
+            <a href="#"><button class="criar" onclick="markAsConcluded(this)">Concluído</button></a>
         </div>
 
         <div class="meal" onclick="toggleMealPlan('lunch')">
@@ -282,7 +289,7 @@
                     <td>1 Unidade média (135g)</td>
                 </tr>
             </table>
-            <a href="criar.html"><button class="criar">Concluído</button></a>
+            <a href="#"><button class="criar" onclick="markAsConcluded(this)">Concluído</button></a>
         </div>
 
         <div class="meal" onclick="toggleMealPlan('snack')">
@@ -304,7 +311,7 @@
                     <td>2 Colheres de sopa (40g)</td>
                 </tr>
             </table>
-            <a href="criar.html"><button class="criar">Concluído</button></a>
+            <a href="#"><button class="criar">Concluído</button></a>
         </div>
 
         <div class="meal" onclick="toggleMealPlan('dinner')">
@@ -346,7 +353,7 @@
                     <td>2 Colheres de servir cheias (110g)</td>
                 </tr>
             </table>
-            <a href="criar.html"><button class="criar">Concluído</button></a>
+            <a href="#"><button class="criar" onclick="markAsConcluded(this)">Concluído</button></a>
         </div>
 
         <div class="meal" onclick="toggleMealPlan('supper')">
@@ -364,7 +371,7 @@
                     <td>0.5 Unidade pequena (185g)</td>
                 </tr>
             </table>
-            <a href="criar.html"><button class="criar">Concluído</button></a>
+            <a href="#"><button class="criar" onclick="markAsConcluded(this)">Concluído</button></a>
         </div>
     </div>
 
@@ -375,7 +382,6 @@
             <button onclick="submitQuestion()">Enviar</button>
         </div>
     </footer>
-
     <script>
         function toggleMealPlan(mealId) {
             const selectedMeal = document.getElementById(mealId);
@@ -387,10 +393,11 @@
                 selectedMeal.style.display = 'block';
             }
         }
-        
+
+        // Função que adiciona a classe de concluído ao botão
+        function markAsConcluded(button) {
+            button.classList.add('concluido');
+        }
     </script>
-
-    
-
 </body>
 </html>
